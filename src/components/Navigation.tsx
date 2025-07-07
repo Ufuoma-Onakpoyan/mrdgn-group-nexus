@@ -25,6 +25,10 @@ const Navigation = () => {
     { name: 'Contact Us', path: '/contact' },
   ];
 
+  const handleNavClick = () => {
+    window.scrollTo(0, 0);
+  };
+
   return (
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
       scrolled ? 'bg-white/95 backdrop-blur-md shadow-lg' : 'bg-transparent'
@@ -32,9 +36,9 @@ const Navigation = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
-          <Link to="/" className="flex items-center space-x-2 group">
-            <div className="w-10 h-10 bg-gradient-to-r from-primary to-blue-600 rounded-lg flex items-center justify-center transition-transform group-hover:scale-105">
-              <span className="text-white font-bold text-lg">M</span>
+          <Link to="/" onClick={handleNavClick} className="flex items-center space-x-2 group">
+            <div className="w-10 h-10 bg-gradient-to-r from-primary to-destructive rounded-lg flex items-center justify-center transition-all duration-300 group-hover:scale-110 group-hover:rotate-6">
+              <span className="text-primary-foreground font-bold text-lg">M</span>
             </div>
             <span className={`font-bold text-xl transition-colors ${
               scrolled ? 'text-gray-900' : 'text-white'
@@ -49,15 +53,16 @@ const Navigation = () => {
               <Link
                 key={link.name}
                 to={link.path}
-                className={`relative text-sm font-medium transition-colors hover:text-primary ${
-                  scrolled ? 'text-gray-700' : 'text-white/90'
+                onClick={handleNavClick}
+                className={`relative text-sm font-medium transition-all duration-300 hover:text-primary hover:scale-105 ${
+                  scrolled ? 'text-foreground' : 'text-primary-foreground/90'
                 } ${
                   location.pathname === link.path ? 'text-primary' : ''
                 }`}
               >
                 {link.name}
                 <span className={`absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 ${
-                  location.pathname === link.path ? 'w-full' : 'group-hover:w-full'
+                  location.pathname === link.path ? 'w-full' : 'hover:w-full'
                 }`} />
               </Link>
             ))}
@@ -85,9 +90,12 @@ const Navigation = () => {
               <Link
                 key={link.name}
                 to={link.path}
-                onClick={() => setIsOpen(false)}
-                className={`block px-3 py-2 text-base font-medium transition-colors hover:text-primary hover:bg-gray-50 ${
-                  location.pathname === link.path ? 'text-primary bg-gray-50' : 'text-gray-700'
+                onClick={() => {
+                  setIsOpen(false);
+                  handleNavClick();
+                }}
+                className={`block px-3 py-2 text-base font-medium transition-all duration-300 hover:text-primary hover:bg-muted hover:scale-105 ${
+                  location.pathname === link.path ? 'text-primary bg-muted' : 'text-foreground'
                 }`}
               >
                 {link.name}
