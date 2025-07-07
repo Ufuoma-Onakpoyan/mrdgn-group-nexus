@@ -59,16 +59,16 @@ const Media = () => {
   ];
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen page-transition">
       <Navigation />
       
       {/* Hero Section */}
       <section className="pt-20 pb-16 gradient-hero">
         <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
-          <h1 className="text-5xl md:text-6xl font-bold text-white mb-6 animate-fade-in">
+          <h1 className="text-5xl md:text-6xl font-bold text-white mb-6 animate-fade-in-down">
             Media Center
           </h1>
-          <p className="text-xl text-white/90 max-w-3xl mx-auto animate-fade-in" style={{ animationDelay: '0.2s' }}>
+          <p className="text-xl text-white/90 max-w-3xl mx-auto animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
             Stay updated with the latest news, announcements, and insights from MrDGN Group and our portfolio companies.
           </p>
         </div>
@@ -90,14 +90,14 @@ const Media = () => {
             {newsItems.map((item, index) => (
               <Card 
                 key={item.title} 
-                className="hover-lift cursor-pointer animate-scale-in"
+                className="card-hover cursor-pointer animate-fade-in-up hover-slide"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
                 <div className="relative overflow-hidden rounded-t-lg">
                   <img 
                     src={item.image} 
                     alt={item.title}
-                    className="w-full h-48 object-cover transition-transform duration-300 hover:scale-105"
+                    className="w-full h-48 object-cover image-hover"
                   />
                   <div className="absolute top-4 left-4">
                     <span className="bg-primary text-white px-3 py-1 rounded-full text-sm font-medium">
@@ -155,7 +155,7 @@ const Media = () => {
               return (
                 <Card 
                   key={resource.title} 
-                  className="hover-lift text-center cursor-pointer animate-scale-in"
+                  className="card-hover text-center cursor-pointer animate-bounce-in"
                   style={{ animationDelay: `${index * 0.1}s` }}
                 >
                   <CardContent className="p-8">
@@ -190,7 +190,7 @@ const Media = () => {
             For media inquiries, interview requests, or additional information, please contact our press team.
           </p>
           
-          <Card className="shadow-xl animate-fade-in">
+          <Card className="shadow-xl animate-slide-up card-hover">
             <CardContent className="p-8">
               <div className="grid md:grid-cols-2 gap-8 text-left">
                 <div>

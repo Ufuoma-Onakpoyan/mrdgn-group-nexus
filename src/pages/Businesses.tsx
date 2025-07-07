@@ -37,16 +37,16 @@ const Businesses = () => {
   ];
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen page-transition">
       <Navigation />
       
       {/* Hero Section */}
       <section className="pt-20 pb-16 gradient-hero">
         <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
-          <h1 className="text-5xl md:text-6xl font-bold text-white mb-6 animate-fade-in">
+          <h1 className="text-5xl md:text-6xl font-bold text-white mb-6 animate-fade-in-down">
             Our Businesses
           </h1>
-          <p className="text-xl text-white/90 max-w-3xl mx-auto animate-fade-in" style={{ animationDelay: '0.2s' }}>
+          <p className="text-xl text-white/90 max-w-3xl mx-auto animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
             Discover how our diverse portfolio of companies is shaping the future across entertainment, construction, and real estate industries.
           </p>
         </div>
@@ -70,9 +70,9 @@ const Businesses = () => {
               const isEven = index % 2 === 0;
               
               return (
-                <div 
+                 <div 
                   key={business.name} 
-                  className={`grid lg:grid-cols-2 gap-12 items-center animate-fade-in ${!isEven ? 'lg:grid-flow-col-dense' : ''}`}
+                  className={`grid lg:grid-cols-2 gap-12 items-center ${isEven ? 'animate-fade-in-left' : 'animate-fade-in-right'} ${!isEven ? 'lg:grid-flow-col-dense' : ''}`}
                   style={{ animationDelay: `${index * 0.2}s` }}
                 >
                   <div className={isEven ? 'lg:pr-8' : 'lg:pl-8 lg:col-start-2'}>
@@ -112,21 +112,21 @@ const Businesses = () => {
                       </div>
                     </div>
 
-                    <Button className="hover-lift">
+                    <Button className="button-hover hover-scale">
                       Learn More About {business.name}
                       <ArrowRight className="w-4 h-4 ml-2" />
                     </Button>
                   </div>
                   
                   <div className={isEven ? '' : 'lg:col-start-1'}>
-                    <Card className="overflow-hidden hover-lift">
+                    <Card className="overflow-hidden card-hover hover-slide">
                       <div className="relative">
                         <img 
                           src={business.image} 
                           alt={business.name}
-                          className="w-full h-64 lg:h-80 object-cover"
+                          className="w-full h-64 lg:h-80 object-cover image-hover"
                         />
-                        <div className={`absolute inset-0 bg-gradient-to-r ${business.color} opacity-20`}></div>
+                        <div className={`absolute inset-0 bg-gradient-to-r ${business.color} opacity-20 transition-opacity duration-300 hover:opacity-30`}></div>
                       </div>
                     </Card>
                   </div>
@@ -150,9 +150,9 @@ const Businesses = () => {
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
-            <Card className="hover-lift text-center animate-scale-in">
+            <Card className="card-hover text-center animate-bounce-in">
               <CardContent className="p-8">
-                <Users className="w-12 h-12 mx-auto mb-4 text-primary" />
+                <Users className="w-12 h-12 mx-auto mb-4 text-primary hover-scale" />
                 <h3 className="text-xl font-semibold text-gray-900 mb-4">
                   Shared Expertise
                 </h3>
@@ -162,9 +162,9 @@ const Businesses = () => {
               </CardContent>
             </Card>
 
-            <Card className="hover-lift text-center animate-scale-in" style={{ animationDelay: '0.1s' }}>
+            <Card className="card-hover text-center animate-bounce-in" style={{ animationDelay: '0.1s' }}>
               <CardContent className="p-8">
-                <Building2 className="w-12 h-12 mx-auto mb-4 text-primary" />
+                <Building2 className="w-12 h-12 mx-auto mb-4 text-primary hover-scale" />
                 <h3 className="text-xl font-semibold text-gray-900 mb-4">
                   Integrated Solutions
                 </h3>
@@ -174,9 +174,9 @@ const Businesses = () => {
               </CardContent>
             </Card>
 
-            <Card className="hover-lift text-center animate-scale-in" style={{ animationDelay: '0.2s' }}>
+            <Card className="card-hover text-center animate-bounce-in" style={{ animationDelay: '0.2s' }}>
               <CardContent className="p-8">
-                <TrendingUp className="w-12 h-12 mx-auto mb-4 text-primary" />
+                <TrendingUp className="w-12 h-12 mx-auto mb-4 text-primary hover-scale" />
                 <h3 className="text-xl font-semibold text-gray-900 mb-4">
                   Strategic Growth
                 </h3>

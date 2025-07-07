@@ -63,16 +63,16 @@ const Contact = () => {
   ];
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen page-transition">
       <Navigation />
       
       {/* Hero Section */}
       <section className="pt-20 pb-16 gradient-hero">
         <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
-          <h1 className="text-5xl md:text-6xl font-bold text-white mb-6 animate-fade-in">
+          <h1 className="text-5xl md:text-6xl font-bold text-white mb-6 animate-fade-in-down">
             Contact Us
           </h1>
-          <p className="text-xl text-white/90 max-w-3xl mx-auto animate-fade-in" style={{ animationDelay: '0.2s' }}>
+          <p className="text-xl text-white/90 max-w-3xl mx-auto animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
             Ready to explore opportunities together? Get in touch with our team and let's discuss how we can collaborate.
           </p>
         </div>
@@ -87,7 +87,7 @@ const Contact = () => {
               return (
                 <Card 
                   key={info.title} 
-                  className="hover-lift text-center animate-scale-in"
+                  className="card-hover text-center animate-bounce-in"
                   style={{ animationDelay: `${index * 0.1}s` }}
                 >
                   <CardContent className="p-8">
@@ -123,7 +123,7 @@ const Contact = () => {
             </p>
           </div>
 
-          <Card className="shadow-2xl animate-fade-in">
+          <Card className="shadow-2xl animate-slide-up card-hover">
             <CardContent className="p-8 md:p-12">
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid md:grid-cols-2 gap-6">
@@ -210,7 +210,7 @@ const Contact = () => {
                   <Button 
                     type="submit" 
                     size="lg" 
-                    className="px-8 py-3 hover-lift"
+                    className="px-8 py-3 button-hover hover-scale"
                   >
                     Send Message
                     <Send className="w-4 h-4 ml-2" />
@@ -234,7 +234,7 @@ const Contact = () => {
             </p>
           </div>
 
-          <Card className="overflow-hidden shadow-2xl animate-fade-in">
+          <Card className="overflow-hidden shadow-2xl animate-slide-up card-hover">
             <div className="h-96 bg-gradient-to-r from-primary/20 to-blue-600/20 flex items-center justify-center">
               <div className="text-center">
                 <MapPin className="w-16 h-16 mx-auto mb-4 text-primary" />

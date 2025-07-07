@@ -29,16 +29,16 @@ const About = () => {
   ];
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen page-transition">
       <Navigation />
       
       {/* Hero Section */}
       <section className="pt-20 pb-16 gradient-hero">
         <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
-          <h1 className="text-5xl md:text-6xl font-bold text-white mb-6 animate-fade-in">
+          <h1 className="text-5xl md:text-6xl font-bold text-white mb-6 animate-fade-in-down">
             About MrDGN Group
           </h1>
-          <p className="text-xl text-white/90 max-w-3xl mx-auto animate-fade-in" style={{ animationDelay: '0.2s' }}>
+          <p className="text-xl text-white/90 max-w-3xl mx-auto animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
             Building tomorrow's industries through strategic investments, innovative leadership, and unwavering commitment to excellence.
           </p>
         </div>
@@ -48,7 +48,7 @@ const About = () => {
       <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <div className="animate-fade-in">
+            <div className="animate-fade-in-left">
               <h2 className="text-4xl font-bold text-gray-900 mb-6">
                 Our Story
               </h2>
@@ -62,14 +62,14 @@ const About = () => {
                 As we look to the future, MrDGN Group remains committed to expanding our portfolio with businesses that share our vision of creating positive change while delivering exceptional value to our stakeholders.
               </p>
             </div>
-            <div className="animate-scale-in" style={{ animationDelay: '0.3s' }}>
-              <div className="relative">
+            <div className="animate-fade-in-right" style={{ animationDelay: '0.3s' }}>
+              <div className="relative card-hover">
                 <img 
                   src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=600&h=400&fit=crop"
                   alt="Modern office building"
-                  className="rounded-lg shadow-2xl"
+                  className="rounded-lg shadow-2xl image-hover"
                 />
-                <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-transparent rounded-lg"></div>
+                <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-transparent rounded-lg transition-opacity duration-300 hover:opacity-80"></div>
               </div>
             </div>
           </div>
@@ -94,7 +94,7 @@ const About = () => {
               return (
                 <Card 
                   key={value.title} 
-                  className="hover-lift text-center animate-scale-in"
+                  className="card-hover text-center animate-bounce-in"
                   style={{ animationDelay: `${index * 0.1}s` }}
                 >
                   <CardContent className="p-8">
@@ -127,7 +127,7 @@ const About = () => {
             </p>
           </div>
 
-          <div className="bg-white rounded-2xl p-8 md:p-12 shadow-xl animate-fade-in">
+          <div className="bg-white rounded-2xl p-8 md:p-12 shadow-xl animate-slide-up card-hover">
             <div className="text-center max-w-4xl mx-auto">
               <h3 className="text-2xl font-semibold text-gray-900 mb-6">
                 Experienced Leadership, Visionary Direction

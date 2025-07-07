@@ -60,16 +60,16 @@ const Careers = () => {
   ];
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen page-transition">
       <Navigation />
       
       {/* Hero Section */}
       <section className="pt-20 pb-16 gradient-hero">
         <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
-          <h1 className="text-5xl md:text-6xl font-bold text-white mb-6 animate-fade-in">
+          <h1 className="text-5xl md:text-6xl font-bold text-white mb-6 animate-fade-in-down">
             Join Our Team
           </h1>
-          <p className="text-xl text-white/90 max-w-3xl mx-auto animate-fade-in" style={{ animationDelay: '0.2s' }}>
+          <p className="text-xl text-white/90 max-w-3xl mx-auto animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
             Build your career with MrDGN Group and help shape the future across entertainment, construction, and real estate industries.
           </p>
         </div>
@@ -93,7 +93,7 @@ const Careers = () => {
               return (
                 <Card 
                   key={benefit.title} 
-                  className="hover-lift text-center animate-scale-in"
+                  className="card-hover text-center animate-bounce-in"
                   style={{ animationDelay: `${index * 0.1}s` }}
                 >
                   <CardContent className="p-8">
@@ -130,7 +130,7 @@ const Careers = () => {
             {openPositions.map((position, index) => (
               <Card 
                 key={position.title} 
-                className="hover-lift animate-fade-in"
+                className="card-hover animate-fade-in-up"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
                 <CardContent className="p-8">
@@ -191,7 +191,7 @@ const Careers = () => {
             ].map((item, index) => (
               <Card 
                 key={item.step} 
-                className="text-center animate-scale-in"
+                className="text-center card-hover animate-bounce-in"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
                 <CardContent className="p-6">
