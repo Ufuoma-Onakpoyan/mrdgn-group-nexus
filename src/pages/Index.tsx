@@ -34,34 +34,60 @@ const Index = () => {
       
       {/* Hero Section */}
       <section className="relative h-screen flex items-center justify-center gradient-hero overflow-hidden">
-        <div className="absolute inset-0 bg-black/20"></div>
+        <div className="absolute inset-0 bg-black/30"></div>
+        
+        {/* Animated Background Grid */}
+        <div className="absolute inset-0 opacity-20">
+          <div className="grid grid-cols-20 grid-rows-20 h-full w-full">
+            {Array.from({ length: 400 }).map((_, i) => (
+              <div
+                key={i}
+                className="border border-white/10 animate-pulse"
+                style={{ animationDelay: `${Math.random() * 5}s` }}
+              />
+            ))}
+          </div>
+        </div>
+
+        {/* Parallax Floating Elements */}
+        <div className="absolute top-20 left-10 w-20 h-20 bg-gradient-to-r from-primary to-destructive rounded-full animate-float opacity-60 blur-sm" style={{ animationDelay: '0s' }}></div>
+        <div className="absolute bottom-32 right-20 w-16 h-16 bg-gradient-to-r from-destructive to-primary rounded-full animate-float opacity-40" style={{ animationDelay: '2s' }}></div>
+        <div className="absolute top-1/2 right-10 w-12 h-12 bg-white/20 rounded-full animate-float" style={{ animationDelay: '4s' }}></div>
+        <div className="absolute top-1/3 left-1/4 w-8 h-8 bg-primary/30 rounded-full animate-float" style={{ animationDelay: '1s' }}></div>
+        <div className="absolute bottom-1/4 left-20 w-6 h-6 bg-destructive/40 rounded-full animate-float" style={{ animationDelay: '3s' }}></div>
+
         <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
-          <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 animate-fade-in">
-            Building the
-            <span className="block bg-gradient-to-r from-yellow-400 to-orange-400 bg-clip-text text-transparent animate-float">
-              Future
-            </span>
-          </h1>
-          <p className="text-xl md:text-2xl text-white/90 mb-8 max-w-2xl mx-auto animate-fade-in" style={{ animationDelay: '0.2s' }}>
-            MrDGN Group is a modern holding company driving innovation across entertainment, construction, and real estate industries.
+          <div className="relative">
+            <h1 className="text-6xl md:text-8xl font-bold text-white mb-8 animate-fade-in leading-tight">
+              Building the
+              <span className="block bg-gradient-to-r from-primary via-white to-destructive bg-clip-text text-transparent animate-pulse-slow text-glow">
+                Future
+              </span>
+            </h1>
+            
+            {/* Decorative Line */}
+            <div className="w-32 h-1 bg-gradient-to-r from-primary to-destructive mx-auto mb-8 animate-fade-in" style={{ animationDelay: '0.3s' }}></div>
+          </div>
+          
+          <p className="text-2xl md:text-3xl text-white/95 mb-12 max-w-3xl mx-auto animate-fade-in font-light leading-relaxed" style={{ animationDelay: '0.5s' }}>
+            MrDGN Group is a <span className="text-primary font-semibold">modern holding company</span> driving innovation across entertainment, construction, and real estate industries.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in" style={{ animationDelay: '0.4s' }}>
-            <Button size="lg" className="bg-white text-primary hover:bg-white/90 px-8 py-3">
-              <Link to="/about" className="flex items-center gap-2">
+          
+          <div className="flex flex-col sm:flex-row gap-6 justify-center animate-fade-in" style={{ animationDelay: '0.7s' }}>
+            <Button size="lg" className="bg-gradient-to-r from-primary to-destructive text-white hover:scale-105 transform transition-all duration-300 px-10 py-4 text-lg shadow-glow hover:shadow-glow-intense group">
+              <Link to="/about" className="flex items-center gap-3">
                 Discover Our Story
-                <ArrowRight size={20} />
+                <ArrowRight size={24} className="group-hover:translate-x-1 transition-transform" />
               </Link>
             </Button>
-            <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-primary px-8 py-3">
-              <Link to="/businesses">Explore Our Businesses</Link>
+            <Button size="lg" variant="outline" className="border-2 border-white text-white hover:bg-white hover:text-primary px-10 py-4 text-lg backdrop-blur-sm hover:scale-105 transform transition-all duration-300 group">
+              <Link to="/businesses" className="flex items-center gap-3">
+                Explore Our Businesses
+                <ArrowRight size={24} className="group-hover:translate-x-1 transition-transform" />
+              </Link>
             </Button>
           </div>
         </div>
-        
-        {/* Floating Elements */}
-        <div className="absolute top-20 left-10 w-20 h-20 bg-white/10 rounded-full animate-float" style={{ animationDelay: '0s' }}></div>
-        <div className="absolute bottom-32 right-20 w-16 h-16 bg-white/10 rounded-full animate-float" style={{ animationDelay: '2s' }}></div>
-        <div className="absolute top-1/2 right-10 w-12 h-12 bg-white/10 rounded-full animate-float" style={{ animationDelay: '4s' }}></div>
       </section>
 
       {/* Our Businesses Section */}
