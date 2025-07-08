@@ -91,13 +91,13 @@ const Index = () => {
       </section>
 
       {/* Our Businesses Section */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-20 bg-muted">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+            <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
               Our Portfolio
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
               We operate diverse businesses united by a commitment to excellence, innovation, and sustainable growth.
             </p>
           </div>
@@ -115,10 +115,10 @@ const Index = () => {
                     <div className={`w-16 h-16 mx-auto mb-6 rounded-full bg-gradient-to-r ${subsidiary.color} flex items-center justify-center group-hover:scale-110 transition-transform duration-300`}>
                       <IconComponent className="w-8 h-8 text-white" />
                     </div>
-                    <h3 className="text-2xl font-semibold text-gray-900 mb-4 group-hover:text-primary transition-colors">
+                    <h3 className="text-2xl font-semibold text-foreground mb-4 group-hover:text-primary transition-colors">
                       {subsidiary.name}
                     </h3>
-                    <p className="text-gray-600 leading-relaxed">
+                    <p className="text-muted-foreground leading-relaxed">
                       {subsidiary.description}
                     </p>
                   </CardContent>
@@ -162,7 +162,7 @@ const Index = () => {
       </section>
 
       {/* Footer */}
-      <footer className="bg-gray-900 text-white py-12">
+      <footer className="bg-muted text-foreground py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-4 gap-8">
             <div className="col-span-2">
@@ -172,13 +172,13 @@ const Index = () => {
                 </div>
                 <span className="font-bold text-xl">MrDGN Group</span>
               </div>
-              <p className="text-gray-400 mb-4 max-w-md">
+              <p className="text-muted-foreground mb-4 max-w-md">
                 A modern holding company building the future across entertainment, construction, and real estate industries.
               </p>
             </div>
             <div>
               <h4 className="font-semibold mb-4">Our Businesses</h4>
-              <ul className="space-y-2 text-gray-400">
+              <ul className="space-y-2 text-muted-foreground">
                 <li>MrDGN Entertainment</li>
                 <li>MrDGN Construction</li>
                 <li>Mansa Realty</li>
@@ -186,14 +186,14 @@ const Index = () => {
             </div>
             <div>
               <h4 className="font-semibold mb-4">Quick Links</h4>
-              <ul className="space-y-2 text-gray-400">
-                <li><Link to="/about" className="hover:text-white transition-colors">About Us</Link></li>
-                <li><Link to="/careers" className="hover:text-white transition-colors">Careers</Link></li>
-                <li><Link to="/contact" className="hover:text-white transition-colors">Contact</Link></li>
+              <ul className="space-y-2 text-muted-foreground">
+                <li><Link to="/about" className="hover:text-foreground transition-colors">About Us</Link></li>
+                <li><Link to="/careers" className="hover:text-foreground transition-colors">Careers</Link></li>
+                <li><Link to="/contact" className="hover:text-foreground transition-colors">Contact</Link></li>
               </ul>
             </div>
           </div>
-          <div className="border-t border-gray-800 pt-8 mt-8 text-center text-gray-400">
+          <div className="border-t border-border pt-8 mt-8 text-center text-muted-foreground">
             <p>&copy; 2024 MrDGN Group. All rights reserved.</p>
           </div>
         </div>
