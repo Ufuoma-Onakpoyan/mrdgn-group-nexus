@@ -45,20 +45,20 @@ const About = () => {
       </section>
 
       {/* Story Section */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-20 bg-muted/20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div className="animate-fade-in-left">
-              <h2 className="text-4xl font-bold text-gray-900 mb-6">
+              <h2 className="text-4xl font-bold text-foreground mb-6">
                 Our Story
               </h2>
-              <p className="text-lg text-gray-600 mb-6 leading-relaxed">
+              <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
                 Founded with a vision to create lasting impact across multiple industries, MrDGN Group has grown from a single entrepreneurial vision into a diversified holding company that shapes the future of entertainment, construction, and real estate.
               </p>
-              <p className="text-lg text-gray-600 mb-6 leading-relaxed">
+              <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
                 Our journey began with the understanding that true success comes from building businesses that not only generate returns but also contribute meaningfully to society. Today, we continue to identify and nurture opportunities that align with our core values of innovation, sustainability, and excellence.
               </p>
-              <p className="text-lg text-gray-600 leading-relaxed">
+              <p className="text-lg text-muted-foreground leading-relaxed">
                 As we look to the future, MrDGN Group remains committed to expanding our portfolio with businesses that share our vision of creating positive change while delivering exceptional value to our stakeholders.
               </p>
             </div>
@@ -80,10 +80,10 @@ const About = () => {
       <section className="py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+            <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
               Our Core Values
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
               These principles guide every decision we make and every relationship we build.
             </p>
           </div>
@@ -101,10 +101,10 @@ const About = () => {
                     <div className="w-16 h-16 mx-auto mb-6 rounded-full bg-gradient-to-r from-primary to-blue-600 flex items-center justify-center">
                       <IconComponent className="w-8 h-8 text-white" />
                     </div>
-                    <h3 className="text-xl font-semibold text-gray-900 mb-4">
+                    <h3 className="text-xl font-semibold text-foreground mb-4">
                       {value.title}
                     </h3>
-                    <p className="text-gray-600 leading-relaxed">
+                    <p className="text-muted-foreground leading-relaxed">
                       {value.description}
                     </p>
                   </CardContent>
@@ -116,37 +116,37 @@ const About = () => {
       </section>
 
       {/* Leadership Section */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-20 bg-muted/20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+            <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
               Leadership Excellence
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
               Our leadership team brings decades of combined experience across diverse industries, driving strategic growth and operational excellence.
             </p>
           </div>
 
-          <div className="bg-white rounded-2xl p-8 md:p-12 shadow-xl animate-slide-up card-hover">
+          <div className="bg-card rounded-2xl p-8 md:p-12 shadow-xl animate-slide-up card-hover border border-border">
             <div className="text-center max-w-4xl mx-auto">
-              <h3 className="text-2xl font-semibold text-gray-900 mb-6">
+              <h3 className="text-2xl font-semibold text-foreground mb-6">
                 Experienced Leadership, Visionary Direction
               </h3>
-              <p className="text-lg text-gray-600 leading-relaxed mb-8">
+              <p className="text-lg text-muted-foreground leading-relaxed mb-8">
                 Our executive team combines deep industry expertise with innovative thinking, ensuring that each of our subsidiaries operates at the highest level while contributing to our overall strategic objectives. We believe in empowering our leaders to make bold decisions that drive sustainable growth.
               </p>
               <div className="grid md:grid-cols-3 gap-8 text-center">
                 <div>
                   <div className="text-3xl font-bold text-primary mb-2">15+</div>
-                  <div className="text-gray-600">Years of Combined Experience</div>
+                  <div className="text-muted-foreground">Years of Combined Experience</div>
                 </div>
                 <div>
                   <div className="text-3xl font-bold text-primary mb-2">3</div>
-                  <div className="text-gray-600">Industry Sectors</div>
+                  <div className="text-muted-foreground">Industry Sectors</div>
                 </div>
                 <div>
                   <div className="text-3xl font-bold text-primary mb-2">100%</div>
-                  <div className="text-gray-600">Commitment to Excellence</div>
+                  <div className="text-muted-foreground">Commitment to Excellence</div>
                 </div>
               </div>
             </div>

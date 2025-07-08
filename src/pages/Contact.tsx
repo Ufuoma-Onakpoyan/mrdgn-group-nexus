@@ -79,7 +79,7 @@ const Contact = () => {
       </section>
 
       {/* Contact Info Section */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-20 bg-muted/20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-3 gap-8 mb-16">
             {contactInfo.map((info, index) => {
@@ -94,13 +94,13 @@ const Contact = () => {
                     <div className="w-16 h-16 mx-auto mb-6 rounded-full bg-gradient-to-r from-primary to-blue-600 flex items-center justify-center">
                       <IconComponent className="w-8 h-8 text-white" />
                     </div>
-                    <h3 className="text-xl font-semibold text-gray-900 mb-2">
+                    <h3 className="text-xl font-semibold text-foreground mb-2">
                       {info.title}
                     </h3>
                     <p className="text-lg font-medium text-primary mb-2">
                       {info.details}
                     </p>
-                    <p className="text-gray-600">
+                    <p className="text-muted-foreground">
                       {info.description}
                     </p>
                   </CardContent>
@@ -115,10 +115,10 @@ const Contact = () => {
       <section className="py-20">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+            <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
               Send us a Message
             </h2>
-            <p className="text-xl text-gray-600">
+            <p className="text-xl text-muted-foreground">
               Fill out the form below and we'll get back to you within 24 hours.
             </p>
           </div>
@@ -128,7 +128,7 @@ const Contact = () => {
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid md:grid-cols-2 gap-6">
                   <div>
-                    <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
+                    <label htmlFor="name" className="block text-sm font-medium text-foreground mb-2">
                       Full Name *
                     </label>
                     <Input
@@ -143,7 +143,7 @@ const Contact = () => {
                     />
                   </div>
                   <div>
-                    <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
+                    <label htmlFor="email" className="block text-sm font-medium text-foreground mb-2">
                       Email Address *
                     </label>
                     <Input
@@ -161,7 +161,7 @@ const Contact = () => {
 
                 <div className="grid md:grid-cols-2 gap-6">
                   <div>
-                    <label htmlFor="company" className="block text-sm font-medium text-gray-700 mb-2">
+                    <label htmlFor="company" className="block text-sm font-medium text-foreground mb-2">
                       Company
                     </label>
                     <Input
@@ -175,7 +175,7 @@ const Contact = () => {
                     />
                   </div>
                   <div>
-                    <label htmlFor="subject" className="block text-sm font-medium text-gray-700 mb-2">
+                    <label htmlFor="subject" className="block text-sm font-medium text-foreground mb-2">
                       Subject *
                     </label>
                     <Input
@@ -192,7 +192,7 @@ const Contact = () => {
                 </div>
 
                 <div>
-                  <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
+                  <label htmlFor="message" className="block text-sm font-medium text-foreground mb-2">
                     Message *
                   </label>
                   <Textarea
@@ -223,13 +223,13 @@ const Contact = () => {
       </section>
 
       {/* Map Section */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-20 bg-muted/20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">
+            <h2 className="text-4xl font-bold text-foreground mb-4">
               Find Our Office
             </h2>
-            <p className="text-xl text-gray-600">
+            <p className="text-xl text-muted-foreground">
               Located in the heart of the business district, we're easily accessible by all major transportation routes.
             </p>
           </div>
@@ -238,10 +238,10 @@ const Contact = () => {
             <div className="h-96 bg-gradient-to-r from-primary/20 to-blue-600/20 flex items-center justify-center">
               <div className="text-center">
                 <MapPin className="w-16 h-16 mx-auto mb-4 text-primary" />
-                <h3 className="text-2xl font-semibold text-gray-900 mb-2">
+                <h3 className="text-2xl font-semibold text-foreground mb-2">
                   MrDGN Group Headquarters
                 </h3>
-                <p className="text-gray-600 text-lg">
+                <p className="text-muted-foreground text-lg">
                   123 Business District, Suite 500<br />
                   Downtown Business Center<br />
                   City, State 12345

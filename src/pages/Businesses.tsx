@@ -53,13 +53,13 @@ const Businesses = () => {
       </section>
 
       {/* Businesses Overview */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-20 bg-muted/20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+            <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
               Portfolio Excellence
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
               Each of our subsidiaries operates with autonomy while benefiting from our shared resources, expertise, and strategic vision.
             </p>
           </div>
@@ -80,19 +80,19 @@ const Businesses = () => {
                       <div className={`w-12 h-12 rounded-full bg-gradient-to-r ${business.color} flex items-center justify-center mr-4`}>
                         <IconComponent className="w-6 h-6 text-white" />
                       </div>
-                      <h3 className="text-3xl font-bold text-gray-900">
+                      <h3 className="text-3xl font-bold text-foreground">
                         {business.name}
                       </h3>
                     </div>
-                    <p className="text-lg text-gray-600 mb-6 leading-relaxed">
+                    <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
                       {business.description}
                     </p>
                     
                     <div className="mb-6">
-                      <h4 className="text-lg font-semibold text-gray-900 mb-3">Key Services</h4>
+                      <h4 className="text-lg font-semibold text-foreground mb-3">Key Services</h4>
                       <div className="grid grid-cols-2 gap-2">
                         {business.services.map((service) => (
-                          <div key={service} className="flex items-center text-gray-600">
+                          <div key={service} className="flex items-center text-muted-foreground">
                             <Star className="w-4 h-4 text-primary mr-2" />
                             {service}
                           </div>
@@ -101,10 +101,10 @@ const Businesses = () => {
                     </div>
 
                     <div className="mb-8">
-                      <h4 className="text-lg font-semibold text-gray-900 mb-3">Key Achievements</h4>
+                      <h4 className="text-lg font-semibold text-foreground mb-3">Key Achievements</h4>
                       <div className="space-y-2">
                         {business.stats.map((stat) => (
-                          <div key={stat} className="flex items-center text-gray-600">
+                          <div key={stat} className="flex items-center text-muted-foreground">
                             <TrendingUp className="w-4 h-4 text-green-500 mr-2" />
                             {stat}
                           </div>
@@ -141,10 +141,10 @@ const Businesses = () => {
       <section className="py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+            <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
               Creating Synergies
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
               Our businesses work together to create unique opportunities and deliver enhanced value to our clients and partners.
             </p>
           </div>
@@ -153,10 +153,10 @@ const Businesses = () => {
             <Card className="card-hover text-center animate-bounce-in">
               <CardContent className="p-8">
                 <Users className="w-12 h-12 mx-auto mb-4 text-primary hover-scale" />
-                <h3 className="text-xl font-semibold text-gray-900 mb-4">
+                <h3 className="text-xl font-semibold text-foreground mb-4">
                   Shared Expertise
                 </h3>
-                <p className="text-gray-600">
+                <p className="text-muted-foreground">
                   Cross-pollination of knowledge and skills across our portfolio companies drives innovation and efficiency.
                 </p>
               </CardContent>
@@ -165,10 +165,10 @@ const Businesses = () => {
             <Card className="card-hover text-center animate-bounce-in" style={{ animationDelay: '0.1s' }}>
               <CardContent className="p-8">
                 <Building2 className="w-12 h-12 mx-auto mb-4 text-primary hover-scale" />
-                <h3 className="text-xl font-semibold text-gray-900 mb-4">
+                <h3 className="text-xl font-semibold text-foreground mb-4">
                   Integrated Solutions
                 </h3>
-                <p className="text-gray-600">
+                <p className="text-muted-foreground">
                   Our companies collaborate to offer comprehensive solutions that span multiple industries and services.
                 </p>
               </CardContent>
@@ -177,10 +177,10 @@ const Businesses = () => {
             <Card className="card-hover text-center animate-bounce-in" style={{ animationDelay: '0.2s' }}>
               <CardContent className="p-8">
                 <TrendingUp className="w-12 h-12 mx-auto mb-4 text-primary hover-scale" />
-                <h3 className="text-xl font-semibold text-gray-900 mb-4">
+                <h3 className="text-xl font-semibold text-foreground mb-4">
                   Strategic Growth
                 </h3>
-                <p className="text-gray-600">
+                <p className="text-muted-foreground">
                   Coordinated growth strategies and shared resources amplify the success of each business unit.
                 </p>
               </CardContent>

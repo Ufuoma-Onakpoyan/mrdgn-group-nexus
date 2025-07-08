@@ -76,13 +76,13 @@ const Careers = () => {
       </section>
 
       {/* Why Work With Us Section */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-20 bg-muted/20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+            <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
               Why Work With Us
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
               Join a dynamic organization that values innovation, growth, and making a positive impact.
             </p>
           </div>
@@ -100,10 +100,10 @@ const Careers = () => {
                     <div className="w-16 h-16 mx-auto mb-6 rounded-full bg-gradient-to-r from-primary to-blue-600 flex items-center justify-center">
                       <IconComponent className="w-8 h-8 text-white" />
                     </div>
-                    <h3 className="text-xl font-semibold text-gray-900 mb-4">
+                    <h3 className="text-xl font-semibold text-foreground mb-4">
                       {benefit.title}
                     </h3>
-                    <p className="text-gray-600 leading-relaxed">
+                    <p className="text-muted-foreground leading-relaxed">
                       {benefit.description}
                     </p>
                   </CardContent>
@@ -118,10 +118,10 @@ const Careers = () => {
       <section className="py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+            <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
               Open Positions
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
               Explore current opportunities across our portfolio of companies.
             </p>
           </div>
@@ -137,17 +137,17 @@ const Careers = () => {
                   <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between">
                     <div className="flex-1 mb-6 lg:mb-0">
                       <div className="flex flex-wrap items-center gap-4 mb-4">
-                        <h3 className="text-2xl font-semibold text-gray-900">
+                        <h3 className="text-2xl font-semibold text-foreground">
                           {position.title}
                         </h3>
                         <span className="bg-primary text-white px-3 py-1 rounded-full text-sm font-medium">
                           {position.department}
                         </span>
                       </div>
-                      <p className="text-gray-600 mb-4 leading-relaxed">
+                      <p className="text-muted-foreground mb-4 leading-relaxed">
                         {position.description}
                       </p>
-                      <div className="flex flex-wrap gap-6 text-sm text-gray-500">
+                      <div className="flex flex-wrap gap-6 text-sm text-muted-foreground">
                         <div className="flex items-center">
                           <MapPin className="w-4 h-4 mr-2" />
                           {position.location}
@@ -176,9 +176,9 @@ const Careers = () => {
       </section>
 
       {/* Application Process Section */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-20 bg-muted/20">
         <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
-          <h2 className="text-4xl font-bold text-gray-900 mb-8">
+          <h2 className="text-4xl font-bold text-foreground mb-8">
             Our Hiring Process
           </h2>
           
@@ -198,10 +198,10 @@ const Careers = () => {
                   <div className="w-12 h-12 mx-auto mb-4 rounded-full bg-primary text-white flex items-center justify-center font-bold text-lg">
                     {item.step}
                   </div>
-                  <h3 className="text-lg font-semibold text-gray-900 mb-3">
+                  <h3 className="text-lg font-semibold text-foreground mb-3">
                     {item.title}
                   </h3>
-                  <p className="text-gray-600 text-sm">
+                  <p className="text-muted-foreground text-sm">
                     {item.description}
                   </p>
                 </CardContent>

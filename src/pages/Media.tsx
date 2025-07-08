@@ -75,13 +75,13 @@ const Media = () => {
       </section>
 
       {/* Latest News Section */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-20 bg-muted/20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+            <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
               Latest News
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
               Recent updates and announcements from across our organization.
             </p>
           </div>
@@ -106,7 +106,7 @@ const Media = () => {
                   </div>
                 </div>
                 <CardContent className="p-6">
-                  <div className="flex items-center text-gray-500 text-sm mb-3">
+                  <div className="flex items-center text-muted-foreground text-sm mb-3">
                     <Calendar className="w-4 h-4 mr-2" />
                     {new Date(item.date).toLocaleDateString('en-US', { 
                       year: 'numeric', 
@@ -114,10 +114,10 @@ const Media = () => {
                       day: 'numeric' 
                     })}
                   </div>
-                  <h3 className="text-xl font-semibold text-gray-900 mb-3 hover:text-primary transition-colors">
+                  <h3 className="text-xl font-semibold text-foreground mb-3 hover:text-primary transition-colors">
                     {item.title}
                   </h3>
-                  <p className="text-gray-600 mb-4 leading-relaxed">
+                  <p className="text-muted-foreground mb-4 leading-relaxed">
                     {item.excerpt}
                   </p>
                   <Button variant="outline" size="sm">
@@ -141,10 +141,10 @@ const Media = () => {
       <section className="py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+            <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
               Media Resources
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
               Download comprehensive information about our company, leadership, and business operations.
             </p>
           </div>
@@ -162,10 +162,10 @@ const Media = () => {
                     <div className="w-16 h-16 mx-auto mb-6 rounded-full bg-gradient-to-r from-primary to-blue-600 flex items-center justify-center">
                       <IconComponent className="w-8 h-8 text-white" />
                     </div>
-                    <h3 className="text-xl font-semibold text-gray-900 mb-4">
+                    <h3 className="text-xl font-semibold text-foreground mb-4">
                       {resource.title}
                     </h3>
-                    <p className="text-gray-600 mb-6 leading-relaxed">
+                    <p className="text-muted-foreground mb-6 leading-relaxed">
                       {resource.description}
                     </p>
                     <Button className="w-full">
@@ -181,12 +181,12 @@ const Media = () => {
       </section>
 
       {/* Press Contact Section */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-20 bg-muted/20">
         <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
-          <h2 className="text-4xl font-bold text-gray-900 mb-6">
+          <h2 className="text-4xl font-bold text-foreground mb-6">
             Press Inquiries
           </h2>
-          <p className="text-xl text-gray-600 mb-8">
+          <p className="text-xl text-muted-foreground mb-8">
             For media inquiries, interview requests, or additional information, please contact our press team.
           </p>
           
@@ -194,26 +194,26 @@ const Media = () => {
             <CardContent className="p-8">
               <div className="grid md:grid-cols-2 gap-8 text-left">
                 <div>
-                  <h3 className="text-lg font-semibold text-gray-900 mb-4">
+                  <h3 className="text-lg font-semibold text-foreground mb-4">
                     Media Relations
                   </h3>
                   <div className="space-y-2">
-                    <p className="text-gray-600">
+                    <p className="text-muted-foreground">
                       <strong>Email:</strong> press@mrdgngroup.com
                     </p>
-                    <p className="text-gray-600">
+                    <p className="text-muted-foreground">
                       <strong>Phone:</strong> +1 (555) 123-4567 ext. 200
                     </p>
-                    <p className="text-gray-600">
+                    <p className="text-muted-foreground">
                       <strong>Hours:</strong> Monday - Friday, 9AM - 6PM EST
                     </p>
                   </div>
                 </div>
                 <div>
-                  <h3 className="text-lg font-semibold text-gray-900 mb-4">
+                  <h3 className="text-lg font-semibold text-foreground mb-4">
                     Quick Response
                   </h3>
-                  <p className="text-gray-600 mb-4">
+                  <p className="text-muted-foreground mb-4">
                     We aim to respond to all media inquiries within 24 hours during business days.
                   </p>
                   <Button>

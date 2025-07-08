@@ -31,7 +31,7 @@ const Navigation = () => {
 
   return (
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-      scrolled ? 'bg-white/95 backdrop-blur-md shadow-lg' : 'bg-transparent'
+      scrolled ? 'bg-background/95 backdrop-blur-md shadow-lg border-b border-border' : 'bg-transparent'
     }`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
@@ -41,7 +41,7 @@ const Navigation = () => {
               <span className="text-primary-foreground font-bold text-lg">M</span>
             </div>
             <span className={`font-bold text-xl transition-colors ${
-              scrolled ? 'text-gray-900' : 'text-white'
+              scrolled ? 'text-foreground' : 'text-primary-foreground'
             }`}>
               MrDGN Group
             </span>
@@ -55,7 +55,7 @@ const Navigation = () => {
                 to={link.path}
                 onClick={handleNavClick}
                 className={`relative text-sm font-medium transition-all duration-300 hover:text-primary hover:scale-105 ${
-                  scrolled ? 'text-foreground' : 'text-primary-foreground/90'
+                  scrolled ? 'text-foreground' : 'text-primary-foreground'
                 } ${
                   location.pathname === link.path ? 'text-primary' : ''
                 }`}
@@ -74,7 +74,7 @@ const Navigation = () => {
               variant="ghost"
               size="sm"
               onClick={() => setIsOpen(!isOpen)}
-              className={scrolled ? 'text-gray-900' : 'text-white'}
+              className={scrolled ? 'text-foreground' : 'text-primary-foreground'}
             >
               {isOpen ? <X size={24} /> : <Menu size={24} />}
             </Button>
@@ -84,7 +84,7 @@ const Navigation = () => {
 
       {/* Mobile Navigation */}
       {isOpen && (
-        <div className="md:hidden bg-white shadow-lg">
+        <div className="md:hidden bg-background shadow-lg border-t border-border">
           <div className="px-2 pt-2 pb-3 space-y-1">
             {navLinks.map((link) => (
               <Link
