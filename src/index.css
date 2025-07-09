@@ -103,16 +103,16 @@ All colors MUST be HSL.
     width: 100%;
     height: 100%;
     background: radial-gradient(
-      250px circle at var(--mouse-x) var(--mouse-y),
-      hsl(0 0% 10%) 0%,
-      hsl(0 0% 6%) 25%,
-      hsl(0 0% 3%) 50%,
+      150px circle at var(--mouse-x) var(--mouse-y),
+      hsl(0 0% 12%) 0%,
+      hsl(0 0% 8%) 25%,
+      hsl(0 0% 4%) 50%,
       hsl(0 0% 0%) 100%
     );
     pointer-events: none;
     z-index: 1;
     mix-blend-mode: lighten;
-    transition: all 0.15s ease-out;
+    transition: all 0.1s ease-out;
   }
 
   /* Additional trailing effect */
@@ -124,15 +124,15 @@ All colors MUST be HSL.
     width: 100%;
     height: 100%;
     background: radial-gradient(
-      120px circle at var(--mouse-x) var(--mouse-y),
-      hsl(0 0% 8%) 0%,
-      hsl(0 0% 4%) 40%,
+      80px circle at var(--mouse-x) var(--mouse-y),
+      hsl(0 0% 10%) 0%,
+      hsl(0 0% 6%) 40%,
       transparent 80%
     );
     pointer-events: none;
     z-index: 2;
     mix-blend-mode: lighten;
-    transition: all 0.3s ease-out;
+    transition: all 0.2s ease-out;
   }
 
   /* Ensure content is above the spotlight effect */
@@ -258,12 +258,38 @@ All colors MUST be HSL.
   .card-hover {
     transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     border: 1px solid transparent;
+    position: relative;
+    overflow: hidden;
   }
 
   .card-hover:hover {
     transform: translateY(-8px) rotateX(2deg);
     border-color: hsl(var(--primary) / 0.2);
     box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25), 0 0 30px rgba(220, 38, 38, 0.1);
+  }
+
+  .card-hover::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  .card-hover:hover::before {
+    opacity: 1;
+  }
+
+  .card-hover > * {
+    position: relative;
+    z-index: 2;
   }
 
   .image-hover {
@@ -273,5 +299,40 @@ All colors MUST be HSL.
   .image-hover:hover {
     transform: scale(1.08) rotate(1deg);
     filter: brightness(1.1) contrast(1.1);
+  }
+
+  .tile-glassy {
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+
+  .tile-glassy::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(12px);
+    opacity: 0;
+    transition: all 0.3s ease;
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  .tile-glassy:hover::before {
+    opacity: 1;
+  }
+
+  .tile-glassy:hover {
+    transform: translateY(-6px) scale(1.02);
+    box-shadow: 0 20px 40px -12px rgba(0, 0, 0, 0.3), 0 0 25px rgba(220, 38, 38, 0.1);
+  }
+
+  .tile-glassy > * {
+    position: relative;
+    z-index: 2;
   }
 }

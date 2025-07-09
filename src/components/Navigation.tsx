@@ -41,7 +41,7 @@ const Navigation = () => {
               <span className="text-primary-foreground font-bold text-lg">M</span>
             </div>
             <span className={`font-bold text-xl transition-colors ${
-              scrolled ? 'text-foreground' : 'text-primary-foreground'
+              scrolled ? 'text-foreground drop-shadow-lg' : 'text-primary-foreground drop-shadow-lg'
             }`}>
               MrDGN Group
             </span>
@@ -54,7 +54,7 @@ const Navigation = () => {
                 key={link.name}
                 to={link.path}
                 onClick={handleNavClick}
-                className={`relative text-sm font-medium transition-all duration-300 hover:text-primary hover:scale-105 ${
+                className={`relative text-sm font-medium transition-all duration-300 hover:text-primary hover:scale-105 drop-shadow-lg ${
                   scrolled ? 'text-foreground' : 'text-primary-foreground'
                 } ${
                   location.pathname === link.path ? 'text-primary' : ''
@@ -74,7 +74,7 @@ const Navigation = () => {
               variant="ghost"
               size="sm"
               onClick={() => setIsOpen(!isOpen)}
-              className={scrolled ? 'text-foreground' : 'text-primary-foreground'}
+              className={`drop-shadow-lg ${scrolled ? 'text-foreground' : 'text-primary-foreground'}`}
             >
               {isOpen ? <X size={24} /> : <Menu size={24} />}
             </Button>

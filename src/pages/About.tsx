@@ -94,7 +94,7 @@ const About = () => {
               return (
                 <Card 
                   key={value.title} 
-                  className="card-hover text-center animate-bounce-in"
+                  className="tile-glassy text-center animate-bounce-in"
                   style={{ animationDelay: `${index * 0.1}s` }}
                 >
                   <CardContent className="p-8">
@@ -127,7 +127,7 @@ const About = () => {
             </p>
           </div>
 
-          <div className="bg-card rounded-2xl p-8 md:p-12 shadow-xl animate-slide-up card-hover border border-border">
+          <div className="bg-card rounded-2xl p-8 md:p-12 shadow-xl animate-slide-up tile-glassy border border-border">
             <div className="text-center max-w-4xl mx-auto">
               <h3 className="text-2xl font-semibold text-foreground mb-6">
                 Experienced Leadership, Visionary Direction

@@ -119,7 +119,7 @@ const Businesses = () => {
                   </div>
                   
                   <div className={isEven ? '' : 'lg:col-start-1'}>
-                    <Card className="overflow-hidden card-hover hover-slide">
+                    <Card className="overflow-hidden tile-glassy hover-slide">
                       <div className="relative">
                         <img 
                           src={business.image} 
@@ -150,7 +150,7 @@ const Businesses = () => {
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
-            <Card className="card-hover text-center animate-bounce-in">
+            <Card className="tile-glassy text-center animate-bounce-in">
               <CardContent className="p-8">
                 <Users className="w-12 h-12 mx-auto mb-4 text-primary hover-scale" />
                 <h3 className="text-xl font-semibold text-foreground mb-4">
@@ -162,7 +162,7 @@ const Businesses = () => {
               </CardContent>
             </Card>
 
-            <Card className="card-hover text-center animate-bounce-in" style={{ animationDelay: '0.1s' }}>
+            <Card className="tile-glassy text-center animate-bounce-in" style={{ animationDelay: '0.1s' }}>
               <CardContent className="p-8">
                 <Building2 className="w-12 h-12 mx-auto mb-4 text-primary hover-scale" />
                 <h3 className="text-xl font-semibold text-foreground mb-4">
@@ -174,7 +174,7 @@ const Businesses = () => {
               </CardContent>
             </Card>
 
-            <Card className="card-hover text-center animate-bounce-in" style={{ animationDelay: '0.2s' }}>
+            <Card className="tile-glassy text-center animate-bounce-in" style={{ animationDelay: '0.2s' }}>
               <CardContent className="p-8">
                 <TrendingUp className="w-12 h-12 mx-auto mb-4 text-primary hover-scale" />
                 <h3 className="text-xl font-semibold text-foreground mb-4">

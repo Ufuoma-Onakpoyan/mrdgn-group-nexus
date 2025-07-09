@@ -87,7 +87,7 @@ const Contact = () => {
               return (
                 <Card 
                   key={info.title} 
-                  className="card-hover text-center animate-bounce-in"
+                  className="tile-glassy text-center animate-bounce-in"
                   style={{ animationDelay: `${index * 0.1}s` }}
                 >
                   <CardContent className="p-8">
@@ -123,7 +123,7 @@ const Contact = () => {
             </p>
           </div>
 
-          <Card className="shadow-2xl animate-slide-up card-hover">
+          <Card className="shadow-2xl animate-slide-up tile-glassy">
             <CardContent className="p-8 md:p-12">
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid md:grid-cols-2 gap-6">
@@ -234,7 +234,7 @@ const Contact = () => {
             </p>
           </div>
 
-          <Card className="overflow-hidden shadow-2xl animate-slide-up card-hover">
+          <Card className="overflow-hidden shadow-2xl animate-slide-up tile-glassy">
             <div className="h-96 bg-gradient-to-r from-primary/20 to-blue-600/20 flex items-center justify-center">
               <div className="text-center">
                 <MapPin className="w-16 h-16 mx-auto mb-4 text-primary" />

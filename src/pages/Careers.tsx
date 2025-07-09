@@ -93,7 +93,7 @@ const Careers = () => {
               return (
                 <Card 
                   key={benefit.title} 
-                  className="card-hover text-center animate-bounce-in"
+                  className="tile-glassy text-center animate-bounce-in"
                   style={{ animationDelay: `${index * 0.1}s` }}
                 >
                   <CardContent className="p-8">
@@ -128,11 +128,11 @@ const Careers = () => {
 
           <div className="space-y-6">
             {openPositions.map((position, index) => (
-              <Card 
-                key={position.title} 
-                className="card-hover animate-fade-in-up"
-                style={{ animationDelay: `${index * 0.1}s` }}
-              >
+               <Card 
+                 key={position.title} 
+                 className="tile-glassy animate-fade-in-up"
+                 style={{ animationDelay: `${index * 0.1}s` }}
+               >
                 <CardContent className="p-8">
                   <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between">
                     <div className="flex-1 mb-6 lg:mb-0">
@@ -189,11 +189,11 @@ const Careers = () => {
               { step: '3', title: 'Team Interview', description: 'Meet with department managers and potential team members.' },
               { step: '4', title: 'Final Decision', description: 'Receive feedback and, if selected, a competitive offer package.' },
             ].map((item, index) => (
-              <Card 
-                key={item.step} 
-                className="text-center card-hover animate-bounce-in"
-                style={{ animationDelay: `${index * 0.1}s` }}
-              >
+               <Card 
+                 key={item.step} 
+                 className="text-center tile-glassy animate-bounce-in"
+                 style={{ animationDelay: `${index * 0.1}s` }}
+               >
                 <CardContent className="p-6">
                   <div className="w-12 h-12 mx-auto mb-4 rounded-full bg-primary text-white flex items-center justify-center font-bold text-lg">
                     {item.step}

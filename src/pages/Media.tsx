@@ -90,7 +90,7 @@ const Media = () => {
             {newsItems.map((item, index) => (
               <Card 
                 key={item.title} 
-                className="card-hover cursor-pointer animate-fade-in-up hover-slide"
+                className="tile-glassy cursor-pointer animate-fade-in-up hover-slide"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
                 <div className="relative overflow-hidden rounded-t-lg">
@@ -155,7 +155,7 @@ const Media = () => {
               return (
                 <Card 
                   key={resource.title} 
-                  className="card-hover text-center cursor-pointer animate-bounce-in"
+                  className="tile-glassy text-center cursor-pointer animate-bounce-in"
                   style={{ animationDelay: `${index * 0.1}s` }}
                 >
                   <CardContent className="p-8">
@@ -190,7 +190,7 @@ const Media = () => {
             For media inquiries, interview requests, or additional information, please contact our press team.
           </p>
           
-          <Card className="shadow-xl animate-slide-up card-hover">
+          <Card className="shadow-xl animate-slide-up tile-glassy">
             <CardContent className="p-8">
               <div className="grid md:grid-cols-2 gap-8 text-left">
                 <div>

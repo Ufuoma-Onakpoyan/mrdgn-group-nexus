@@ -108,7 +108,7 @@ const Index = () => {
               return (
                 <Card 
                   key={subsidiary.name} 
-                  className="hover-lift cursor-pointer group animate-scale-in"
+                  className="tile-glassy cursor-pointer group animate-scale-in"
                   style={{ animationDelay: `${index * 0.2}s` }}
                 >
                   <CardContent className="p-8 text-center">
