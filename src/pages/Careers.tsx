@@ -39,6 +39,14 @@ const Careers = () => {
       salary: '$90,000 - $130,000',
       description: 'Identify and develop new business opportunities across our portfolio of companies.',
     },
+    {
+      title: 'Software Engineer',
+      department: 'Duerent',
+      location: 'Tech Hub',
+      type: 'Full-time',
+      salary: '$85,000 - $115,000',
+      description: 'Develop innovative rental platform solutions and property management technologies using modern tech stacks.',
+    },
   ];
 
   const benefits = [

@@ -35,6 +35,13 @@ const Media = () => {
       excerpt: 'Year-end analysis shows exceptional performance in luxury real estate transactions and client satisfaction.',
       image: 'https://images.unsplash.com/photo-1582407947304-fd86f028f716?w=400&h=250&fit=crop',
     },
+    {
+      type: 'Tech News',
+      title: 'Duerent Launches Revolutionary Real Estate Management Platform',
+      date: '2023-12-15',
+      excerpt: 'New tech subsidiary unveils cutting-edge solutions for modernizing property rentals and management processes.',
+      image: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=400&h=250&fit=crop',
+    },
   ];
 
   const resources = [

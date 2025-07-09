@@ -31,7 +31,7 @@ const Navigation = () => {
 
   return (
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-      scrolled ? 'bg-background/95 backdrop-blur-md shadow-lg border-b border-border' : 'bg-transparent'
+      scrolled ? 'bg-black/95 backdrop-blur-md shadow-lg border-b border-border' : 'bg-black'
     }`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
@@ -40,9 +40,7 @@ const Navigation = () => {
             <div className="w-10 h-10 bg-gradient-to-r from-primary to-destructive rounded-lg flex items-center justify-center transition-all duration-300 group-hover:scale-110 group-hover:rotate-6">
               <span className="text-primary-foreground font-bold text-lg">M</span>
             </div>
-            <span className={`font-bold text-xl transition-colors ${
-              scrolled ? 'text-foreground drop-shadow-lg' : 'text-primary-foreground drop-shadow-lg'
-            }`}>
+            <span className="font-bold text-xl transition-colors text-white drop-shadow-lg">
               MrDGN Group
             </span>
           </Link>
@@ -54,9 +52,7 @@ const Navigation = () => {
                 key={link.name}
                 to={link.path}
                 onClick={handleNavClick}
-                className={`relative text-sm font-medium transition-all duration-300 hover:text-primary hover:scale-105 drop-shadow-lg ${
-                  scrolled ? 'text-foreground' : 'text-primary-foreground'
-                } ${
+                className={`relative text-sm font-medium transition-all duration-300 hover:text-primary hover:scale-105 drop-shadow-lg text-white ${
                   location.pathname === link.path ? 'text-primary' : ''
                 }`}
               >
@@ -74,7 +70,7 @@ const Navigation = () => {
               variant="ghost"
               size="sm"
               onClick={() => setIsOpen(!isOpen)}
-              className={`drop-shadow-lg ${scrolled ? 'text-foreground' : 'text-primary-foreground'}`}
+              className="drop-shadow-lg text-white"
             >
               {isOpen ? <X size={24} /> : <Menu size={24} />}
             </Button>

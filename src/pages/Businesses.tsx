@@ -34,6 +34,15 @@ const Businesses = () => {
       services: ['Property Sales', 'Investment Advisory', 'Property Management', 'Market Analysis'],
       stats: ['500+ Properties Sold', '$100M+ Transaction Volume', '95% Client Satisfaction'],
     },
+    {
+      name: 'Duerent',
+      description: 'Revolutionary tech company focused on modernizing real estate rentals and property management through innovative digital solutions.',
+      icon: Users,
+      color: 'from-blue-500 to-cyan-500',
+      image: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=600&h=400&fit=crop',
+      services: ['Rental Platform Development', 'Property Management Tech', 'Automated Solutions', 'Digital Innovation'],
+      stats: ['Next-Gen Technology', 'Real Estate Focus', 'Innovative Solutions'],
+    },
   ];
 
   return (
