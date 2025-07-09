@@ -1,13 +1,30 @@
 
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Navigation from '@/components/Navigation';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
-import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
-import { ArrowRight, Building2, Clapperboard, Home, Target, Eye, Users, Award, Calendar, FileText, Laptop } from 'lucide-react';
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious, type CarouselApi } from '@/components/ui/carousel';
+import { ArrowRight, Building2, Clapperboard, Home, Target, Eye, Users, Award, Calendar, FileText, Laptop, ChevronLeft, ChevronRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import Autoplay from "embla-carousel-autoplay";
 
 const Index = () => {
+  const [businessApi, setBusinessApi] = useState<CarouselApi>();
+  const [businessCurrent, setBusinessCurrent] = useState(0);
+  const [businessCount, setBusinessCount] = useState(0);
+
+  useEffect(() => {
+    if (!businessApi) {
+      return;
+    }
+
+    setBusinessCount(businessApi.scrollSnapList().length);
+    setBusinessCurrent(businessApi.selectedScrollSnap() + 1);
+
+    businessApi.on("select", () => {
+      setBusinessCurrent(businessApi.selectedScrollSnap() + 1);
+    });
+  }, [businessApi]);
   const businesses = [
     {
       name: 'MrDGN Entertainment',
@@ -63,28 +80,64 @@ const Index = () => {
     {
       title: 'Digital Entertainment Leadership',
       description: 'MrDGN Entertainment has produced over 50 innovative projects, reaching more than 1 million viewers worldwide.',
-      image: 'https://images.unsplash.com/photo-1598300042247-d088f8ab3a91?w=600&h=400&fit=crop',
+      images: [
+        'https://images.unsplash.com/photo-1598300042247-d088f8ab3a91?w=600&h=400&fit=crop',
+        'https://images.unsplash.com/photo-1574375927938-d5a98e8ffe85?w=600&h=400&fit=crop',
+        'https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=600&h=400&fit=crop'
+      ],
       category: 'Entertainment'
     },
     {
       title: 'Sustainable Construction Excellence',
       description: 'MrDGN Construction has delivered 100+ projects worth over $50M, pioneering green building solutions.',
-      image: 'https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=600&h=400&fit=crop',
+      images: [
+        'https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=600&h=400&fit=crop',
+        'https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=600&h=400&fit=crop',
+        'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&h=400&fit=crop'
+      ],
       category: 'Construction'
     },
     {
       title: 'Premium Real Estate Success',
       description: 'Mansa Realty has facilitated $100M+ in transactions with 95% client satisfaction across 500+ properties.',
-      image: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=600&h=400&fit=crop',
+      images: [
+        'https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=600&h=400&fit=crop',
+        'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=600&h=400&fit=crop',
+        'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=600&h=400&fit=crop'
+      ],
       category: 'Real Estate'
     },
     {
       title: 'Technology Innovation',
       description: 'Duerent is revolutionizing property management with cutting-edge rental platforms and automated solutions.',
-      image: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=600&h=400&fit=crop',
+      images: [
+        'https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=600&h=400&fit=crop',
+        'https://images.unsplash.com/photo-1555255707-c07966088b7b?w=600&h=400&fit=crop',
+        'https://images.unsplash.com/photo-1518709268805-4e9042af2176?w=600&h=400&fit=crop'
+      ],
       category: 'Technology'
     }
   ];
+
+  // Portfolio image carousel state
+  const [portfolioImages, setPortfolioImages] = useState<{ [key: string]: number }>({});
+
+  useEffect(() => {
+    const intervals: { [key: string]: NodeJS.Timeout } = {};
+    
+    portfolioItems.forEach((item, index) => {
+      intervals[item.title] = setInterval(() => {
+        setPortfolioImages(prev => ({
+          ...prev,
+          [item.title]: ((prev[item.title] || 0) + 1) % item.images.length
+        }));
+      }, 3000 + index * 500); // Stagger the intervals slightly
+    });
+
+    return () => {
+      Object.values(intervals).forEach(clearInterval);
+    };
+  }, []);
 
   return (
     <div className="min-h-screen">
@@ -128,11 +181,11 @@ const Index = () => {
           </div>
           
           <p className="text-2xl md:text-3xl text-black/95 mb-12 max-w-3xl mx-auto animate-fade-in font-light leading-relaxed" style={{ animationDelay: '0.5s' }}>
-            MrDGN Group is a <span className="text-primary font-semibold">modern holding company</span> driving innovation across entertainment, construction, and real estate industries.
+            MrDGN Group is a <span className="font-bold text-red-600">conglomerate</span> driving innovation across entertainment, construction, and real estate industries.
           </p>
           
           <div className="flex flex-col sm:flex-row gap-6 justify-center animate-fade-in" style={{ animationDelay: '0.7s' }}>
-            <Button size="lg" className="bg-gradient-to-r from-primary to-destructive text-white hover:scale-105 transform transition-all duration-300 px-10 py-4 text-lg shadow-glow hover:shadow-glow-intense group">
+            <Button size="lg" className="bg-black text-white hover:bg-black/90 hover:scale-105 transform transition-all duration-300 px-10 py-4 text-lg shadow-glow hover:shadow-glow-intense group">
               <Link to="/about" className="flex items-center gap-3">
                 Discover Our Story
                 <ArrowRight size={24} className="group-hover:translate-x-1 transition-transform" />
@@ -205,32 +258,64 @@ const Index = () => {
             </p>
           </div>
 
-          <Carousel className="w-full max-w-5xl mx-auto">
-            <CarouselContent>
-              {businesses.map((business, index) => {
-                const IconComponent = business.icon;
-                return (
-                  <CarouselItem key={business.name} className="md:basis-1/2 lg:basis-1/3">
-                    <Card className="bg-white border-2 border-gray-200 hover:border-primary/20 transition-all duration-300 hover:shadow-lg group">
-                      <CardContent className="p-8 text-center">
-                        <div className={`w-16 h-16 mx-auto mb-6 rounded-full bg-gradient-to-r ${business.color} flex items-center justify-center group-hover:scale-110 transition-transform duration-300`}>
-                          <IconComponent className="w-8 h-8 text-white" />
-                        </div>
-                        <h3 className="text-2xl font-semibold text-black mb-4 group-hover:text-primary transition-colors">
-                          {business.name}
-                        </h3>
-                        <p className="text-black/70 leading-relaxed">
-                          {business.description}
-                        </p>
-                      </CardContent>
-                    </Card>
-                  </CarouselItem>
-                );
-              })}
-            </CarouselContent>
-            <CarouselPrevious />
-            <CarouselNext />
-          </Carousel>
+          <div className="relative">
+            <Carousel 
+              className="w-full max-w-5xl mx-auto"
+              setApi={setBusinessApi}
+              opts={{
+                align: "start",
+                loop: true,
+              }}
+              plugins={[
+                Autoplay({
+                  delay: 4000,
+                }),
+              ]}
+            >
+              <CarouselContent>
+                {businesses.map((business, index) => {
+                  const IconComponent = business.icon;
+                  return (
+                    <CarouselItem key={business.name} className="md:basis-1/2 lg:basis-1/3">
+                      <Card className="bg-white border border-gray-200 hover:border-primary/30 transition-all duration-500 hover:shadow-xl group hover:scale-[1.02] backdrop-blur-sm">
+                        <CardContent className="p-10 text-center relative overflow-hidden">
+                          <div className="absolute inset-0 bg-gradient-to-br from-white/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                          <div className="relative z-10">
+                            <div className={`w-20 h-20 mx-auto mb-8 rounded-2xl bg-gradient-to-r ${business.color} flex items-center justify-center group-hover:scale-110 group-hover:rotate-3 transition-all duration-500 shadow-lg`}>
+                              <IconComponent className="w-10 h-10 text-white" />
+                            </div>
+                            <h3 className="text-2xl font-bold text-black mb-6 group-hover:text-primary transition-colors duration-300">
+                              {business.name}
+                            </h3>
+                            <p className="text-black/70 leading-relaxed text-lg">
+                              {business.description}
+                            </p>
+                          </div>
+                        </CardContent>
+                      </Card>
+                    </CarouselItem>
+                  );
+                })}
+              </CarouselContent>
+              <CarouselPrevious className="left-2 bg-white/90 hover:bg-white border-gray-300" />
+              <CarouselNext className="right-2 bg-white/90 hover:bg-white border-gray-300" />
+            </Carousel>
+
+            {/* Dot Indicators */}
+            <div className="flex justify-center mt-8 space-x-2">
+              {Array.from({ length: businessCount }).map((_, index) => (
+                <button
+                  key={index}
+                  className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                    index === businessCurrent - 1 
+                      ? 'bg-primary scale-125' 
+                      : 'bg-gray-300 hover:bg-gray-400'
+                  }`}
+                  onClick={() => businessApi?.scrollTo(index)}
+                />
+              ))}
+            </div>
+          </div>
 
           <div className="text-center mt-12">
             <Button size="lg" className="px-8 py-3 bg-black text-white hover:bg-black/90">
@@ -255,35 +340,51 @@ const Index = () => {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8">
-            {portfolioItems.map((item, index) => (
-              <Card 
-                key={item.title} 
-                className="tile-glassy cursor-pointer group animate-scale-in overflow-hidden"
-                style={{ animationDelay: `${index * 0.2}s` }}
-              >
-                <div className="relative">
-                  <img 
-                    src={item.image} 
-                    alt={item.title}
-                    className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500"
-                  />
-                  <div className="absolute top-4 left-4">
-                    <span className="bg-primary text-primary-foreground px-3 py-1 rounded-full text-sm font-medium">
-                      {item.category}
-                    </span>
+           <div className="grid md:grid-cols-2 gap-8">
+            {portfolioItems.map((item, index) => {
+              const currentImageIndex = portfolioImages[item.title] || 0;
+              return (
+                <Card 
+                  key={item.title} 
+                  className="tile-glassy cursor-pointer group animate-scale-in overflow-hidden"
+                  style={{ animationDelay: `${index * 0.2}s` }}
+                >
+                  <div className="relative">
+                    <img 
+                      src={item.images[currentImageIndex]} 
+                      alt={item.title}
+                      className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500"
+                    />
+                    <div className="absolute top-4 left-4">
+                      <span className="bg-primary text-primary-foreground px-3 py-1 rounded-full text-sm font-medium">
+                        {item.category}
+                      </span>
+                    </div>
+                    {/* Image Carousel Dots */}
+                    <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
+                      {item.images.map((_, imgIndex) => (
+                        <div
+                          key={imgIndex}
+                          className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                            imgIndex === currentImageIndex 
+                              ? 'bg-white scale-125' 
+                              : 'bg-white/50'
+                          }`}
+                        />
+                      ))}
+                    </div>
                   </div>
-                </div>
-                <CardContent className="p-8">
-                  <h3 className="text-2xl font-semibold text-foreground mb-4 group-hover:text-primary transition-colors">
-                    {item.title}
-                  </h3>
-                  <p className="text-muted-foreground leading-relaxed">
-                    {item.description}
-                  </p>
-                </CardContent>
-              </Card>
-            ))}
+                  <CardContent className="p-8">
+                    <h3 className="text-2xl font-semibold text-foreground mb-4 group-hover:text-primary transition-colors">
+                      {item.title}
+                    </h3>
+                    <p className="text-muted-foreground leading-relaxed">
+                      {item.description}
+                    </p>
+                  </CardContent>
+                </Card>
+              );
+            })}
           </div>
         </div>
       </section>
