@@ -77,9 +77,9 @@ const Navigation = () => {
       case 'snippets':
         return 'text-white';
       case 'businesses':
-        return 'text-white';
+        return 'text-black'; // Fixed: businesses section has white background
       case 'contact':
-        return 'text-black';
+        return 'text-white'; // Fixed: contact section has dark background
       case 'cta':
         return 'text-white';
       default:

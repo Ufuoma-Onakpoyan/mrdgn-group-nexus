@@ -181,7 +181,7 @@ const Index = () => {
           <div className="relative">
             <h1 className="text-6xl md:text-8xl font-bold text-black mb-8 animate-fade-in leading-tight">
               Building the
-              <span className="block text-white/90 filter blur-[0.3px] glow-text-white font-extrabold drop-shadow-lg">
+              <span className="block text-black font-extrabold glow-text-subtle">
                 Future
               </span>
             </h1>
