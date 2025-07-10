@@ -168,19 +168,21 @@ const Index = () => {
           </div>
         </div>
 
-        {/* Parallax Floating Elements */}
-        <div className="absolute top-20 left-10 w-20 h-20 bg-gradient-to-r from-primary to-destructive rounded-full animate-float opacity-60 blur-sm" style={{ animationDelay: '0s' }}></div>
-        <div className="absolute bottom-32 right-20 w-16 h-16 bg-gradient-to-r from-destructive to-primary rounded-full animate-float opacity-40" style={{ animationDelay: '2s' }}></div>
-        <div className="absolute top-1/2 right-10 w-12 h-12 bg-white/20 rounded-full animate-float" style={{ animationDelay: '4s' }}></div>
-        <div className="absolute top-1/3 left-1/4 w-8 h-8 bg-primary/30 rounded-full animate-float" style={{ animationDelay: '1s' }}></div>
-        <div className="absolute bottom-1/4 left-20 w-6 h-6 bg-destructive/40 rounded-full animate-float" style={{ animationDelay: '3s' }}></div>
+        {/* Parallax Floating Elements - Enhanced Visibility */}
+        <div className="absolute top-20 left-10 w-24 h-24 bg-gradient-to-r from-primary to-destructive rounded-full animate-float opacity-80 blur-sm animate-pulse" style={{ animationDelay: '0s' }}></div>
+        <div className="absolute bottom-32 right-20 w-20 h-20 bg-gradient-to-r from-destructive to-primary rounded-full animate-float opacity-70 animate-bounce" style={{ animationDelay: '2s' }}></div>
+        <div className="absolute top-1/2 right-10 w-16 h-16 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full animate-float opacity-60 animate-spin" style={{ animationDelay: '4s', animationDuration: '8s' }}></div>
+        <div className="absolute top-1/3 left-1/4 w-12 h-12 bg-gradient-to-r from-green-400 to-blue-500 rounded-full animate-float opacity-70 animate-pulse" style={{ animationDelay: '1s' }}></div>
+        <div className="absolute bottom-1/4 left-20 w-10 h-10 bg-gradient-to-r from-orange-500 to-red-500 rounded-full animate-float opacity-60 animate-bounce" style={{ animationDelay: '3s' }}></div>
+        <div className="absolute top-16 right-1/3 w-8 h-8 bg-gradient-to-r from-pink-400 to-purple-500 rounded-full animate-float opacity-50 animate-spin" style={{ animationDelay: '5s', animationDuration: '6s' }}></div>
+        <div className="absolute bottom-40 left-1/3 w-14 h-14 bg-gradient-to-r from-cyan-400 to-blue-600 rounded-full animate-float opacity-65 animate-pulse" style={{ animationDelay: '6s' }}></div>
 
         <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
           <div className="relative">
             <h1 className="text-6xl md:text-8xl font-bold text-black mb-8 animate-fade-in leading-tight">
               Building the
-              <span className="block bg-gradient-to-r from-primary via-black to-destructive bg-clip-text text-transparent animate-pulse-slow text-glow">
-                Future
+              <span className="block bg-gradient-to-r from-primary via-black to-destructive bg-clip-text text-transparent animate-pulse text-glow relative">
+                <span className="animate-pulse-glow">Future</span>
               </span>
             </h1>
             
@@ -285,22 +287,33 @@ const Index = () => {
                   const IconComponent = business.icon;
                   return (
                     <CarouselItem key={business.name} className="md:basis-1/2 lg:basis-1/3">
-                      <Card className="bg-black border border-gray-800 hover:border-primary/50 transition-all duration-500 hover:shadow-2xl group hover:scale-[1.03] hover:-translate-y-2 backdrop-blur-sm h-80 relative overflow-hidden">
+                      <Card className="bg-black border border-gray-800 hover:border-primary/50 transition-all duration-500 group hover:scale-[1.08] hover:-translate-y-4 backdrop-blur-sm h-80 relative overflow-hidden hover:shadow-[0_25px_60px_-15px_rgba(0,0,0,0.8),0_0_0_1px_rgba(59,130,246,0.3)] hover:bg-gradient-to-br hover:from-gray-900 hover:to-black">
                         <CardContent className="p-8 text-center relative h-full flex flex-col justify-center">
-                          <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-destructive/10 opacity-0 group-hover:opacity-100 transition-all duration-700"></div>
-                          <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                          <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-transparent to-destructive/20 opacity-0 group-hover:opacity-100 transition-all duration-700"></div>
+                          <div className="absolute inset-0 bg-gradient-to-t from-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                          <div className="absolute -inset-4 bg-gradient-to-r from-primary/20 to-destructive/20 rounded-3xl opacity-0 group-hover:opacity-100 blur-xl transition-all duration-700"></div>
                           <div className="relative z-10">
-                            <div className="w-16 h-16 mx-auto mb-6 rounded-2xl bg-gradient-to-r from-white to-gray-200 flex items-center justify-center group-hover:scale-125 group-hover:rotate-12 transition-all duration-700 shadow-lg">
-                              {business.name === 'Duerent' ? (
-                                <IconComponent />
+                            <div className="w-16 h-16 mx-auto mb-6 rounded-2xl flex items-center justify-center group-hover:scale-125 group-hover:rotate-12 transition-all duration-700 shadow-lg relative overflow-hidden">
+                              {business.name === 'MrDGN Entertainment' ? (
+                                <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-pink-500 rounded-2xl flex items-center justify-center">
+                                  <IconComponent className="w-8 h-8 text-white" />
+                                </div>
+                              ) : business.name === 'MrDGN Construction' ? (
+                                <div className="w-16 h-16 bg-gradient-to-br from-orange-500 to-red-500 rounded-2xl flex items-center justify-center">
+                                  <IconComponent className="w-8 h-8 text-white" />
+                                </div>
+                              ) : business.name === 'Mansa Realty' ? (
+                                <div className="w-16 h-16 bg-gradient-to-br from-green-500 to-teal-500 rounded-2xl flex items-center justify-center">
+                                  <IconComponent className="w-8 h-8 text-white" />
+                                </div>
                               ) : (
-                                <IconComponent className="w-8 h-8 text-black" />
+                                <IconComponent />
                               )}
                             </div>
-                            <h3 className="text-xl font-bold text-white mb-4 group-hover:text-primary transition-colors duration-300">
+                            <h3 className="text-xl font-bold text-white mb-4 group-hover:text-primary transition-colors duration-300 group-hover:drop-shadow-lg">
                               {business.name}
                             </h3>
-                            <p className="text-gray-300 leading-relaxed text-sm group-hover:text-white transition-colors duration-300">
+                            <p className="text-gray-300 leading-relaxed text-sm group-hover:text-white transition-colors duration-300 group-hover:drop-shadow-md">
                               {business.description}
                             </p>
                           </div>
