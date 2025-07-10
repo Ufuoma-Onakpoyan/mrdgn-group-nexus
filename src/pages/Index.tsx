@@ -152,7 +152,7 @@ const Index = () => {
       <Navigation />
       
       {/* Hero Section */}
-      <section className="relative h-screen flex items-center justify-center bg-white overflow-hidden">
+      <section className="hero-section relative h-screen flex items-center justify-center bg-white overflow-hidden">
         <div className="absolute inset-0 bg-white"></div>
         
         {/* Animated Background Grid */}
@@ -181,7 +181,7 @@ const Index = () => {
           <div className="relative">
             <h1 className="text-6xl md:text-8xl font-bold text-black mb-8 animate-fade-in leading-tight">
               Building the
-              <span className="block text-black animate-pulse filter blur-[2px]">
+              <span className="block text-black filter blur-[0.5px] glow-text">
                 Future
               </span>
             </h1>
@@ -212,7 +212,7 @@ const Index = () => {
       </section>
 
       {/* Preview Snippets Section */}
-      <section className="py-20 bg-background">
+      <section className="snippets-section py-20 bg-background">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
@@ -257,7 +257,7 @@ const Index = () => {
       </section>
 
       {/* Our Businesses Carousel Section */}
-      <section className="py-20 bg-white">
+      <section className="businesses-section py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-black mb-4">
@@ -421,7 +421,7 @@ const Index = () => {
       </section>
 
       {/* Ready to Partner Section */}
-      <section className="py-20 gradient-hero text-center">
+      <section className="cta-section py-20 gradient-hero text-center">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-8 animate-fade-in">
             Ready to Partner with Us?
@@ -439,7 +439,7 @@ const Index = () => {
       </section>
 
       {/* Interactive Map Section */}
-      <section className="py-20 bg-background">
+      <section className="contact-section py-20 bg-background">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold text-foreground mb-4">

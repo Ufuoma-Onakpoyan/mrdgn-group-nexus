@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
@@ -7,6 +6,7 @@ import { Menu, X } from 'lucide-react';
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [currentSection, setCurrentSection] = useState('hero');
   const location = useLocation();
 
   useEffect(() => {
@@ -16,6 +16,43 @@ const Navigation = () => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  useEffect(() => {
+    if (location.pathname !== '/') return;
+
+    const sections = [
+      { id: 'hero', selector: '.hero-section' },
+      { id: 'snippets', selector: '.snippets-section' },
+      { id: 'businesses', selector: '.businesses-section' },
+      { id: 'contact', selector: '.contact-section' },
+      { id: 'cta', selector: '.cta-section' }
+    ];
+
+    const observerOptions = {
+      root: null,
+      rootMargin: '-50% 0px -50% 0px',
+      threshold: 0
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const sectionId = entry.target.getAttribute('data-section') || 'hero';
+          setCurrentSection(sectionId);
+        }
+      });
+    }, observerOptions);
+
+    sections.forEach(({ id, selector }) => {
+      const element = document.querySelector(selector);
+      if (element) {
+        element.setAttribute('data-section', id);
+        observer.observe(element);
+      }
+    });
+
+    return () => observer.disconnect();
+  }, [location.pathname]);
 
   const navLinks = [
     { name: 'About Us', path: '/about' },
@@ -29,10 +66,31 @@ const Navigation = () => {
     window.scrollTo(0, 0);
   };
 
+  const getNavbarStyle = () => {
+    if (location.pathname !== '/') {
+      return 'bg-white text-black';
+    }
+
+    switch (currentSection) {
+      case 'hero':
+        return 'bg-white text-black';
+      case 'snippets':
+        return 'bg-black text-white';
+      case 'businesses':
+        return 'bg-black text-white';
+      case 'contact':
+        return 'bg-white text-black';
+      case 'cta':
+        return 'bg-destructive text-white';
+      default:
+        return 'bg-white text-black';
+    }
+  };
+
+  const navStyle = getNavbarStyle();
+
   return (
-    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-      scrolled ? 'bg-black/95 backdrop-blur-md shadow-lg border-b border-border' : 'bg-black'
-    }`}>
+    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${navStyle} backdrop-blur-md shadow-lg border-b border-border/20`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
@@ -40,7 +98,7 @@ const Navigation = () => {
             <div className="w-10 h-10 bg-gradient-to-r from-primary to-destructive rounded-lg flex items-center justify-center transition-all duration-300 group-hover:scale-110 group-hover:rotate-6">
               <span className="text-primary-foreground font-bold text-lg">M</span>
             </div>
-            <span className="font-bold text-xl transition-colors text-white drop-shadow-lg">
+            <span className="font-bold text-xl transition-colors drop-shadow-lg">
               MrDGN Group
             </span>
           </Link>
@@ -52,7 +110,7 @@ const Navigation = () => {
                 key={link.name}
                 to={link.path}
                 onClick={handleNavClick}
-                className={`relative text-sm font-medium transition-all duration-300 hover:text-primary hover:scale-105 drop-shadow-lg text-white ${
+                className={`relative text-sm font-medium transition-all duration-300 hover:text-primary hover:scale-105 drop-shadow-lg ${
                   location.pathname === link.path ? 'text-primary' : ''
                 }`}
               >
@@ -70,7 +128,7 @@ const Navigation = () => {
               variant="ghost"
               size="sm"
               onClick={() => setIsOpen(!isOpen)}
-              className="drop-shadow-lg text-white"
+              className="drop-shadow-lg"
             >
               {isOpen ? <X size={24} /> : <Menu size={24} />}
             </Button>
