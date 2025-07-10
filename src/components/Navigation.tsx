@@ -68,29 +68,29 @@ const Navigation = () => {
 
   const getNavbarStyle = () => {
     if (location.pathname !== '/') {
-      return 'bg-white text-black';
+      return 'text-black';
     }
 
     switch (currentSection) {
       case 'hero':
-        return 'bg-white text-black';
+        return 'text-black';
       case 'snippets':
-        return 'bg-black text-white';
+        return 'text-white';
       case 'businesses':
-        return 'bg-black text-white';
+        return 'text-white';
       case 'contact':
-        return 'bg-white text-black';
+        return 'text-black';
       case 'cta':
-        return 'bg-destructive text-white';
+        return 'text-white';
       default:
-        return 'bg-white text-black';
+        return 'text-black';
     }
   };
 
   const navStyle = getNavbarStyle();
 
   return (
-    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${navStyle} backdrop-blur-md shadow-lg border-b border-border/20`}>
+    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${navStyle} backdrop-blur-md bg-white/10 shadow-lg border-b border-white/20`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
