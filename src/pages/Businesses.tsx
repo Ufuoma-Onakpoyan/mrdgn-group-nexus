@@ -23,7 +23,7 @@ const Businesses = () => {
       color: 'from-orange-500 to-red-500',
       image: 'https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=600&h=400&fit=crop',
       services: ['Commercial Construction', 'Residential Development', 'Infrastructure Projects', 'Green Building Solutions'],
-      stats: ['100+ Projects Delivered', '$50M+ in Contracts', '15+ Years Experience'],
+      stats: ['100+ Projects Delivered', '₦50M+ in Contracts', '15+ Years Experience'],
     },
     {
       name: 'Mansa Realty',
@@ -32,7 +32,7 @@ const Businesses = () => {
       color: 'from-green-500 to-teal-500',
       image: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=600&h=400&fit=crop',
       services: ['Property Sales', 'Investment Advisory', 'Property Management', 'Market Analysis'],
-      stats: ['500+ Properties Sold', '$100M+ Transaction Volume', '95% Client Satisfaction'],
+      stats: ['500+ Properties Sold', '₦100M+ Transaction Volume', '95% Client Satisfaction'],
     },
     {
       name: 'Duerent',

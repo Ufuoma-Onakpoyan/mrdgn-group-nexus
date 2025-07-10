@@ -12,7 +12,7 @@ const Careers = () => {
       department: 'MrDGN Construction',
       location: 'Downtown Office',
       type: 'Full-time',
-      salary: '$80,000 - $120,000',
+      salary: '₦80,000 - ₦120,000',
       description: 'Lead construction projects from conception to completion, managing teams and ensuring quality delivery.',
     },
     {
@@ -20,7 +20,7 @@ const Careers = () => {
       department: 'MrDGN Entertainment',
       location: 'Creative Studio',
       type: 'Full-time',
-      salary: '$60,000 - $85,000',
+      salary: '₦60,000 - ₦85,000',
       description: 'Create engaging digital content across multiple platforms, working with creative teams on innovative projects.',
     },
     {
@@ -28,7 +28,7 @@ const Careers = () => {
       department: 'Mansa Realty',
       location: 'Sales Office',
       type: 'Full-time',
-      salary: '$50,000 + Commission',
+      salary: '₦50,000 + Commission',
       description: 'Guide clients through property transactions, providing expert advice and exceptional service.',
     },
     {
@@ -36,7 +36,7 @@ const Careers = () => {
       department: 'MrDGN Group',
       location: 'Headquarters',
       type: 'Full-time',
-      salary: '$90,000 - $130,000',
+      salary: '₦90,000 - ₦130,000',
       description: 'Identify and develop new business opportunities across our portfolio of companies.',
     },
     {
@@ -44,7 +44,7 @@ const Careers = () => {
       department: 'Duerent',
       location: 'Tech Hub',
       type: 'Full-time',
-      salary: '$85,000 - $115,000',
+      salary: '₦85,000 - ₦115,000',
       description: 'Develop innovative rental platform solutions and property management technologies using modern tech stacks.',
     },
   ];

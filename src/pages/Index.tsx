@@ -5,6 +5,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious, type CarouselApi } from '@/components/ui/carousel';
 import { ArrowRight, Building2, Clapperboard, Home, Target, Eye, Users, Award, Calendar, FileText, Laptop, ChevronLeft, ChevronRight } from 'lucide-react';
+import Map from '@/components/Map';
 import { Link } from 'react-router-dom';
 import Autoplay from "embla-carousel-autoplay";
 
@@ -47,7 +48,14 @@ const Index = () => {
     {
       name: 'Duerent',
       description: 'Revolutionary tech company focused on modernizing real estate rentals and property management solutions.',
-      icon: Laptop,
+      icon: () => (
+        <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-purple-600 rounded-2xl flex items-center justify-center relative">
+          <div className="w-6 h-6 bg-white rounded-lg flex items-center justify-center">
+            <div className="w-3 h-3 bg-gradient-to-br from-blue-500 to-purple-600 rounded"></div>
+          </div>
+          <div className="absolute -top-1 -right-1 w-3 h-3 bg-green-400 rounded-full border-2 border-white"></div>
+        </div>
+      ),
       color: 'from-blue-500 to-cyan-500',
     },
   ];
@@ -89,7 +97,7 @@ const Index = () => {
     },
     {
       title: 'Sustainable Construction Excellence',
-      description: 'MrDGN Construction has delivered 100+ projects worth over $50M, pioneering green building solutions.',
+      description: 'MrDGN Construction has delivered 100+ projects worth over ₦50M, pioneering green building solutions.',
       images: [
         'https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=600&h=400&fit=crop',
         'https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=600&h=400&fit=crop',
@@ -99,7 +107,7 @@ const Index = () => {
     },
     {
       title: 'Premium Real Estate Success',
-      description: 'Mansa Realty has facilitated $100M+ in transactions with 95% client satisfaction across 500+ properties.',
+      description: 'Mansa Realty has facilitated ₦100M+ in transactions with 95% client satisfaction across 500+ properties.',
       images: [
         'https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=600&h=400&fit=crop',
         'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=600&h=400&fit=crop',
@@ -185,13 +193,13 @@ const Index = () => {
           </p>
           
           <div className="flex flex-col sm:flex-row gap-6 justify-center animate-fade-in" style={{ animationDelay: '0.7s' }}>
-            <Button size="lg" className="bg-black text-white hover:bg-black/90 hover:scale-105 transform transition-all duration-300 px-10 py-4 text-lg shadow-glow hover:shadow-glow-intense group">
+            <Button size="lg" className="bg-red-600 text-white hover:bg-red-700 hover:scale-105 transform transition-all duration-300 px-10 py-4 text-lg shadow-glow hover:shadow-glow-intense group">
               <Link to="/about" className="flex items-center gap-3">
                 Discover Our Story
                 <ArrowRight size={24} className="group-hover:translate-x-1 transition-transform" />
               </Link>
             </Button>
-            <Button size="lg" variant="outline" className="border-2 border-black text-black hover:bg-black hover:text-white px-10 py-4 text-lg backdrop-blur-sm hover:scale-105 transform transition-all duration-300 group">
+            <Button size="lg" variant="outline" className="border-2 border-black text-white bg-black hover:bg-black/90 px-10 py-4 text-lg backdrop-blur-sm hover:scale-105 transform transition-all duration-300 group">
               <Link to="/businesses" className="flex items-center gap-3">
                 Explore Our Businesses
                 <ArrowRight size={24} className="group-hover:translate-x-1 transition-transform" />
@@ -260,7 +268,7 @@ const Index = () => {
 
           <div className="relative">
             <Carousel 
-              className="w-full max-w-5xl mx-auto"
+              className="w-full max-w-6xl mx-auto"
               setApi={setBusinessApi}
               opts={{
                 align: "start",
@@ -277,17 +285,22 @@ const Index = () => {
                   const IconComponent = business.icon;
                   return (
                     <CarouselItem key={business.name} className="md:basis-1/2 lg:basis-1/3">
-                      <Card className="bg-white border border-gray-200 hover:border-primary/30 transition-all duration-500 hover:shadow-xl group hover:scale-[1.02] backdrop-blur-sm">
-                        <CardContent className="p-10 text-center relative overflow-hidden">
-                          <div className="absolute inset-0 bg-gradient-to-br from-white/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                      <Card className="bg-black border border-gray-800 hover:border-primary/50 transition-all duration-500 hover:shadow-2xl group hover:scale-[1.03] hover:-translate-y-2 backdrop-blur-sm h-80 relative overflow-hidden">
+                        <CardContent className="p-8 text-center relative h-full flex flex-col justify-center">
+                          <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-destructive/10 opacity-0 group-hover:opacity-100 transition-all duration-700"></div>
+                          <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                           <div className="relative z-10">
-                            <div className={`w-20 h-20 mx-auto mb-8 rounded-2xl bg-gradient-to-r ${business.color} flex items-center justify-center group-hover:scale-110 group-hover:rotate-3 transition-all duration-500 shadow-lg`}>
-                              <IconComponent className="w-10 h-10 text-white" />
+                            <div className="w-16 h-16 mx-auto mb-6 rounded-2xl bg-gradient-to-r from-white to-gray-200 flex items-center justify-center group-hover:scale-125 group-hover:rotate-12 transition-all duration-700 shadow-lg">
+                              {business.name === 'Duerent' ? (
+                                <IconComponent />
+                              ) : (
+                                <IconComponent className="w-8 h-8 text-black" />
+                              )}
                             </div>
-                            <h3 className="text-2xl font-bold text-black mb-6 group-hover:text-primary transition-colors duration-300">
+                            <h3 className="text-xl font-bold text-white mb-4 group-hover:text-primary transition-colors duration-300">
                               {business.name}
                             </h3>
-                            <p className="text-black/70 leading-relaxed text-lg">
+                            <p className="text-gray-300 leading-relaxed text-sm group-hover:text-white transition-colors duration-300">
                               {business.description}
                             </p>
                           </div>
@@ -297,8 +310,12 @@ const Index = () => {
                   );
                 })}
               </CarouselContent>
-              <CarouselPrevious className="left-2 bg-white/90 hover:bg-white border-gray-300" />
-              <CarouselNext className="right-2 bg-white/90 hover:bg-white border-gray-300" />
+              <div className="absolute left-4 top-1/2 -translate-y-1/2 z-10">
+                <CarouselPrevious className="relative left-0 border-none bg-black/20 hover:bg-black/40 text-white opacity-50 hover:opacity-100 transition-all duration-300 w-10 h-10" />
+              </div>
+              <div className="absolute right-4 top-1/2 -translate-y-1/2 z-10">
+                <CarouselNext className="relative right-0 border-none bg-black/20 hover:bg-black/40 text-white opacity-50 hover:opacity-100 transition-all duration-300 w-10 h-10" />
+              </div>
             </Carousel>
 
             {/* Dot Indicators */}
@@ -389,25 +406,37 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Call to Action Section */}
-      <section className="py-20 gradient-hero">
-        <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-            Ready to Partner With Us?
+      {/* Ready to Partner Section */}
+      <section className="py-20 gradient-hero text-center">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-8 animate-fade-in">
+            Ready to Partner with Us?
           </h2>
-          <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
-            Join forces with MrDGN Group and be part of shaping the future across multiple industries.
+          <p className="text-xl text-white/90 mb-10 max-w-2xl mx-auto animate-fade-in" style={{ animationDelay: '0.2s' }}>
+            Join forces with MrDGN Group and be part of building tomorrow's industries. Together, we can create extraordinary value and lasting impact.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="bg-white text-primary hover:bg-white/90 px-8 py-3">
-              <Link to="/contact" className="flex items-center gap-2">
-                Get in Touch
-                <ArrowRight size={20} />
-              </Link>
-            </Button>
-            <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-primary px-8 py-3">
-              <Link to="/careers">Explore Careers</Link>
-            </Button>
+          <Button size="lg" className="bg-white text-primary hover:bg-white/90 px-10 py-4 text-lg hover:scale-105 transform transition-all duration-300 animate-fade-in" style={{ animationDelay: '0.4s' }}>
+            <Link to="/contact" className="flex items-center gap-2">
+              Start the Conversation
+              <ArrowRight size={20} />
+            </Link>
+          </Button>
+        </div>
+      </section>
+
+      {/* Interactive Map Section */}
+      <section className="py-20 bg-background">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl font-bold text-foreground mb-4">
+              Visit Our Office
+            </h2>
+            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+              Located in the heart of the business district. Click the map to get directions via Google Maps.
+            </p>
+          </div>
+          <div className="max-w-4xl mx-auto">
+            <Map className="shadow-2xl rounded-lg animate-fade-in" />
           </div>
         </div>
       </section>

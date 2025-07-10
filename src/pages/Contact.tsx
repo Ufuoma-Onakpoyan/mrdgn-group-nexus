@@ -7,6 +7,7 @@ import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Mail, Phone, MapPin, Send } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
+import Map from '@/components/Map';
 
 const Contact = () => {
   const { toast } = useToast();
@@ -222,7 +223,7 @@ const Contact = () => {
         </div>
       </section>
 
-      {/* Map Section */}
+      {/* Interactive Map Section */}
       <section className="py-20 bg-muted/20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
@@ -230,25 +231,13 @@ const Contact = () => {
               Find Our Office
             </h2>
             <p className="text-xl text-muted-foreground">
-              Located in the heart of the business district, we're easily accessible by all major transportation routes.
+              Located in the heart of the business district. Click the map to get directions via Google Maps.
             </p>
           </div>
 
-          <Card className="overflow-hidden shadow-2xl animate-slide-up tile-glassy">
-            <div className="h-96 bg-gradient-to-r from-primary/20 to-blue-600/20 flex items-center justify-center">
-              <div className="text-center">
-                <MapPin className="w-16 h-16 mx-auto mb-4 text-primary" />
-                <h3 className="text-2xl font-semibold text-foreground mb-2">
-                  MrDGN Group Headquarters
-                </h3>
-                <p className="text-muted-foreground text-lg">
-                  123 Business District, Suite 500<br />
-                  Downtown Business Center<br />
-                  City, State 12345
-                </p>
-              </div>
-            </div>
-          </Card>
+          <div className="max-w-4xl mx-auto">
+            <Map className="shadow-2xl rounded-lg animate-slide-up tile-glassy" />
+          </div>
         </div>
       </section>
     </div>
