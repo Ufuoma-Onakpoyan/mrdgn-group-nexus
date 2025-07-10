@@ -181,7 +181,7 @@ const Index = () => {
           <div className="relative">
             <h1 className="text-6xl md:text-8xl font-bold text-black mb-8 animate-fade-in leading-tight">
               Building the
-              <span className="block text-black animate-pulse">
+              <span className="block text-black animate-pulse filter blur-[2px]">
                 Future
               </span>
             </h1>
@@ -243,7 +243,7 @@ const Index = () => {
                       {snippet.description}
                     </p>
                     <Button variant="outline" className="w-full">
-                      <Link to={snippet.link} className="flex items-center gap-2 justify-center">
+                      <Link to={snippet.link} className="flex items-center gap-2 justify-center" onClick={() => window.scrollTo(0, 0)}>
                         Learn More
                         <ArrowRight size={16} />
                       </Link>
@@ -279,6 +279,7 @@ const Index = () => {
               plugins={[
                 Autoplay({
                   delay: 4000,
+                  stopOnInteraction: false,
                 }),
               ]}
             >
@@ -287,7 +288,7 @@ const Index = () => {
                   const IconComponent = business.icon;
                   return (
                     <CarouselItem key={business.name} className="md:basis-1/2 lg:basis-1/3">
-                      <Card className="bg-black border border-gray-800 hover:border-primary/50 transition-all duration-500 group hover:scale-[1.08] hover:-translate-y-4 backdrop-blur-sm h-80 relative overflow-hidden hover:shadow-[0_25px_60px_-15px_rgba(0,0,0,0.8),0_0_0_1px_rgba(59,130,246,0.3)] hover:bg-gradient-to-br hover:from-gray-900 hover:to-black">
+                      <Card className="bg-black border border-gray-800 hover:border-primary/50 transition-all duration-500 group hover:scale-[1.08] hover:-translate-y-4 backdrop-blur-sm h-[17rem] relative overflow-hidden hover:shadow-[0_25px_60px_-15px_rgba(0,0,0,0.8),0_0_0_1px_rgba(59,130,246,0.3)] hover:bg-gradient-to-br hover:from-gray-900 hover:to-black">
                         <CardContent className="p-8 text-center relative h-full flex flex-col justify-center">
                           <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-transparent to-destructive/20 opacity-0 group-hover:opacity-100 transition-all duration-700"></div>
                           <div className="absolute inset-0 bg-gradient-to-t from-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
@@ -349,7 +350,7 @@ const Index = () => {
 
           <div className="text-center mt-12">
             <Button size="lg" className="px-8 py-3 bg-black text-white hover:bg-black/90">
-              <Link to="/businesses" className="flex items-center gap-2">
+              <Link to="/businesses" className="flex items-center gap-2" onClick={() => window.scrollTo(0, 0)}>
                 Learn More About Our Businesses
                 <ArrowRight size={20} />
               </Link>
@@ -429,7 +430,7 @@ const Index = () => {
             Join forces with MrDGN Group and be part of building tomorrow's industries. Together, we can create extraordinary value and lasting impact.
           </p>
           <Button size="lg" className="bg-white text-primary hover:bg-white/90 px-10 py-4 text-lg hover:scale-105 transform transition-all duration-300 animate-fade-in" style={{ animationDelay: '0.4s' }}>
-            <Link to="/contact" className="flex items-center gap-2">
+            <Link to="/contact" className="flex items-center gap-2" onClick={() => window.scrollTo(0, 0)}>
               Start the Conversation
               <ArrowRight size={20} />
             </Link>
@@ -481,9 +482,9 @@ const Index = () => {
             <div>
               <h4 className="font-semibold mb-4">Quick Links</h4>
               <ul className="space-y-2 text-muted-foreground">
-                <li><Link to="/about" className="hover:text-foreground transition-colors">About Us</Link></li>
-                <li><Link to="/careers" className="hover:text-foreground transition-colors">Careers</Link></li>
-                <li><Link to="/contact" className="hover:text-foreground transition-colors">Contact</Link></li>
+                <li><Link to="/about" className="hover:text-foreground transition-colors" onClick={() => window.scrollTo(0, 0)}>About Us</Link></li>
+                <li><Link to="/careers" className="hover:text-foreground transition-colors" onClick={() => window.scrollTo(0, 0)}>Careers</Link></li>
+                <li><Link to="/contact" className="hover:text-foreground transition-colors" onClick={() => window.scrollTo(0, 0)}>Contact</Link></li>
               </ul>
             </div>
           </div>
