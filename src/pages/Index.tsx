@@ -169,20 +169,20 @@ const Index = () => {
         </div>
 
         {/* Parallax Floating Elements - Enhanced Visibility */}
-        <div className="absolute top-20 left-10 w-24 h-24 bg-gradient-to-r from-primary to-destructive rounded-full animate-float opacity-80 blur-sm animate-pulse" style={{ animationDelay: '0s' }}></div>
-        <div className="absolute bottom-32 right-20 w-20 h-20 bg-gradient-to-r from-destructive to-primary rounded-full animate-float opacity-70 animate-bounce" style={{ animationDelay: '2s' }}></div>
-        <div className="absolute top-1/2 right-10 w-16 h-16 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full animate-float opacity-60 animate-spin" style={{ animationDelay: '4s', animationDuration: '8s' }}></div>
-        <div className="absolute top-1/3 left-1/4 w-12 h-12 bg-gradient-to-r from-green-400 to-blue-500 rounded-full animate-float opacity-70 animate-pulse" style={{ animationDelay: '1s' }}></div>
-        <div className="absolute bottom-1/4 left-20 w-10 h-10 bg-gradient-to-r from-orange-500 to-red-500 rounded-full animate-float opacity-60 animate-bounce" style={{ animationDelay: '3s' }}></div>
-        <div className="absolute top-16 right-1/3 w-8 h-8 bg-gradient-to-r from-pink-400 to-purple-500 rounded-full animate-float opacity-50 animate-spin" style={{ animationDelay: '5s', animationDuration: '6s' }}></div>
-        <div className="absolute bottom-40 left-1/3 w-14 h-14 bg-gradient-to-r from-cyan-400 to-blue-600 rounded-full animate-float opacity-65 animate-pulse" style={{ animationDelay: '6s' }}></div>
+        <div className="absolute top-20 left-10 w-24 h-24 bg-gradient-to-r from-red-400 to-red-600 rounded-full animate-float opacity-80 blur-sm animate-pulse" style={{ animationDelay: '0s' }}></div>
+        <div className="absolute bottom-32 right-20 w-20 h-20 bg-gradient-to-r from-red-500 to-red-700 rounded-full animate-float opacity-70 animate-bounce" style={{ animationDelay: '2s' }}></div>
+        <div className="absolute top-1/2 right-10 w-16 h-16 bg-gradient-to-r from-red-300 to-red-500 rounded-full animate-float opacity-60 animate-spin" style={{ animationDelay: '4s', animationDuration: '8s' }}></div>
+        <div className="absolute top-1/3 left-1/4 w-12 h-12 bg-gradient-to-r from-red-400 to-red-600 rounded-full animate-float opacity-70 animate-pulse" style={{ animationDelay: '1s' }}></div>
+        <div className="absolute bottom-1/4 left-20 w-10 h-10 bg-gradient-to-r from-red-500 to-red-700 rounded-full animate-float opacity-60 animate-bounce" style={{ animationDelay: '3s' }}></div>
+        <div className="absolute top-16 right-1/3 w-8 h-8 bg-gradient-to-r from-red-300 to-red-500 rounded-full animate-float opacity-50 animate-spin" style={{ animationDelay: '5s', animationDuration: '6s' }}></div>
+        <div className="absolute bottom-40 left-1/3 w-14 h-14 bg-gradient-to-r from-red-400 to-red-600 rounded-full animate-float opacity-65 animate-pulse" style={{ animationDelay: '6s' }}></div>
 
         <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
           <div className="relative">
             <h1 className="text-6xl md:text-8xl font-bold text-black mb-8 animate-fade-in leading-tight">
               Building the
-              <span className="block bg-gradient-to-r from-primary via-black to-destructive bg-clip-text text-transparent animate-pulse text-glow relative">
-                <span className="animate-pulse-glow">Future</span>
+              <span className="block text-black animate-pulse">
+                Future
               </span>
             </h1>
             
