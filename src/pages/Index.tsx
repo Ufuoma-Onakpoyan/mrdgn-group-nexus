@@ -157,7 +157,7 @@ const Index = () => {
             <h1 className="text-6xl md:text-8xl font-bold text-black mb-8 animate-fade-in leading-tight">
               <TypingEffect 
                 staticText="Creating"
-                words={["spaces", "stories", "solutions"]}
+                words={["Spaces", "Stories", "Solutions"]}
                 className="block text-black font-extrabold glow-text-subtle"
               />
             </h1>
