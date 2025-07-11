@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Navigation from '@/components/Navigation';
+import TypingEffect from '@/components/TypingEffect';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious, type CarouselApi } from '@/components/ui/carousel';
@@ -37,7 +38,7 @@ const Index = () => {
     icon: Home,
     color: 'from-green-500 to-teal-500'
   }, {
-    name: 'Duerent',
+    name: 'DueRents',
     description: 'Revolutionary tech company focused on modernizing real estate rentals and property management solutions.',
     icon: () => <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-purple-600 rounded-2xl flex items-center justify-center relative">
           <div className="w-6 h-6 bg-white rounded-lg flex items-center justify-center">
@@ -83,7 +84,7 @@ const Index = () => {
     category: 'Real Estate'
   }, {
     title: 'Technology Innovation',
-    description: 'Duerent is revolutionizing property management with cutting-edge rental platforms and automated solutions.',
+    description: 'DueRents is revolutionizing property management with cutting-edge rental platforms and automated solutions.',
     images: ['https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=600&h=400&fit=crop', 'https://images.unsplash.com/photo-1555255707-c07966088b7b?w=600&h=400&fit=crop', 'https://images.unsplash.com/photo-1518709268805-4e9042af2176?w=600&h=400&fit=crop'],
     category: 'Technology'
   }];
@@ -154,10 +155,11 @@ const Index = () => {
         <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
           <div className="relative">
             <h1 className="text-6xl md:text-8xl font-bold text-black mb-8 animate-fade-in leading-tight">
-              Building the
-              <span className="block text-black font-extrabold glow-text-subtle">
-                Future
-              </span>
+              <TypingEffect 
+                staticText="Creating"
+                words={["spaces", "stories", "solutions"]}
+                className="block text-black font-extrabold glow-text-subtle"
+              />
             </h1>
             
             {/* Decorative Line */}
@@ -414,7 +416,7 @@ const Index = () => {
                 <li>MrDGN Entertainment</li>
                 <li>MrDGN Construction</li>
                 <li>Mansa Realty</li>
-                <li>Duerent</li>
+                <li>DueRents</li>
               </ul>
             </div>
             <div>
