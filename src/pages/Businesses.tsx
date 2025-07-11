@@ -35,7 +35,7 @@ const Businesses = () => {
       stats: ['500+ Properties Sold', '₦100M+ Transaction Volume', '95% Client Satisfaction'],
     },
     {
-      name: 'Duerent',
+      name: 'DueRents',
       description: 'Revolutionary tech company focused on modernizing real estate rentals and property management through innovative digital solutions.',
       icon: Users,
       color: 'from-blue-500 to-cyan-500',

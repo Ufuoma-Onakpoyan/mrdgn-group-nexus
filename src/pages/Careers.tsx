@@ -41,7 +41,7 @@ const Careers = () => {
     },
     {
       title: 'Software Engineer',
-      department: 'Duerent',
+      department: 'DueRents',
       location: 'Tech Hub',
       type: 'Full-time',
       salary: '₦85,000 - ₦115,000',

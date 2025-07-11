@@ -46,7 +46,7 @@ const Index = () => {
       color: 'from-green-500 to-teal-500',
     },
     {
-      name: 'Duerent',
+      name: 'DueRents',
       description: 'Revolutionary tech company focused on modernizing real estate rentals and property management solutions.',
       icon: () => (
         <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-purple-600 rounded-2xl flex items-center justify-center relative">
@@ -117,7 +117,7 @@ const Index = () => {
     },
     {
       title: 'Technology Innovation',
-      description: 'Duerent is revolutionizing property management with cutting-edge rental platforms and automated solutions.',
+      description: 'DueRents is revolutionizing property management with cutting-edge rental platforms and automated solutions.',
       images: [
         'https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=600&h=400&fit=crop',
         'https://images.unsplash.com/photo-1555255707-c07966088b7b?w=600&h=400&fit=crop',
@@ -191,7 +191,7 @@ const Index = () => {
           </div>
           
           <p className="text-2xl md:text-3xl text-black/95 mb-12 max-w-3xl mx-auto animate-fade-in font-light leading-relaxed" style={{ animationDelay: '0.5s' }}>
-            MrDGN Group is a <span className="font-bold text-red-600">conglomerate</span> driving innovation across entertainment, construction, and real estate industries.
+            MrDGN Group is a <span className="font-bold text-red-600">conglomerate</span> driving innovation across construction, entertainment and real estate industries.
           </p>
           
           <div className="flex flex-col sm:flex-row gap-6 justify-center animate-fade-in" style={{ animationDelay: '0.7s' }}>
@@ -476,7 +476,7 @@ const Index = () => {
                 <li>MrDGN Entertainment</li>
                 <li>MrDGN Construction</li>
                 <li>Mansa Realty</li>
-                <li>Duerent</li>
+                <li>DueRents</li>
               </ul>
             </div>
             <div>

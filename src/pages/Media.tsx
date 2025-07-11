@@ -37,7 +37,7 @@ const Media = () => {
     },
     {
       type: 'Tech News',
-      title: 'Duerent Launches Revolutionary Real Estate Management Platform',
+      title: 'DueRents Launches Revolutionary Real Estate Management Platform',
       date: '2023-12-15',
       excerpt: 'New tech subsidiary unveils cutting-edge solutions for modernizing property rentals and management processes.',
       image: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=400&h=250&fit=crop',
