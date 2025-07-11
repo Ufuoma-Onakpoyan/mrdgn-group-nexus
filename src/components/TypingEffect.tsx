@@ -18,7 +18,7 @@ const TypingEffect: React.FC<TypingEffectProps> = ({ staticText, words, classNam
         setCurrentWordIndex((prev) => (prev + 1) % words.length);
         setIsVisible(true);
       }, 500); // Half second for fade out, then fade in
-    }, 4000); // Change word every 4 seconds
+    }, 2000); // Change word every 2 seconds
 
     return () => clearInterval(interval);
   }, [words.length]);
