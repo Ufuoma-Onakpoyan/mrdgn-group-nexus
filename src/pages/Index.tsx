@@ -4,7 +4,7 @@ import TypingEffect from '@/components/TypingEffect';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious, type CarouselApi } from '@/components/ui/carousel';
-import { ArrowRight, Building2, Clapperboard, Home, Target, Eye, Users, Award, Calendar, FileText, Laptop, ChevronLeft, ChevronRight } from 'lucide-react';
+import { ArrowRight, Building2, Clapperboard, Home, Target, FileText } from 'lucide-react';
 import Map from '@/components/Map';
 import { Link } from 'react-router-dom';
 import Autoplay from "embla-carousel-autoplay";
@@ -127,29 +127,13 @@ const Index = () => {
           </div>
         </div>
 
-        {/* Parallax Floating Elements - Enhanced Visibility */}
-        <div className="absolute top-20 left-10 w-24 h-24 bg-gradient-to-r from-red-400 to-red-600 rounded-full animate-float opacity-80 blur-sm animate-pulse" style={{
-        animationDelay: '0s'
-      }}></div>
-        <div className="absolute bottom-32 right-20 w-20 h-20 bg-gradient-to-r from-red-500 to-red-700 rounded-full animate-float opacity-70 animate-bounce" style={{
+        {/* Simplified Floating Elements */}
+        <div className="absolute top-20 left-10 w-20 h-20 bg-gradient-to-r from-red-400 to-red-600 rounded-full animate-float opacity-60"></div>
+        <div className="absolute bottom-32 right-20 w-16 h-16 bg-gradient-to-r from-red-500 to-red-700 rounded-full animate-float opacity-50" style={{
         animationDelay: '2s'
       }}></div>
-        <div className="absolute top-1/2 right-10 w-16 h-16 bg-gradient-to-r from-red-300 to-red-500 rounded-full animate-float opacity-60 animate-spin" style={{
-        animationDelay: '4s',
-        animationDuration: '8s'
-      }}></div>
-        <div className="absolute top-1/3 left-1/4 w-12 h-12 bg-gradient-to-r from-red-400 to-red-600 rounded-full animate-float opacity-70 animate-pulse" style={{
-        animationDelay: '1s'
-      }}></div>
-        <div className="absolute bottom-1/4 left-20 w-10 h-10 bg-gradient-to-r from-red-500 to-red-700 rounded-full animate-float opacity-60 animate-bounce" style={{
-        animationDelay: '3s'
-      }}></div>
-        <div className="absolute top-16 right-1/3 w-8 h-8 bg-gradient-to-r from-red-300 to-red-500 rounded-full animate-float opacity-50 animate-spin" style={{
-        animationDelay: '5s',
-        animationDuration: '6s'
-      }}></div>
-        <div className="absolute bottom-40 left-1/3 w-14 h-14 bg-gradient-to-r from-red-400 to-red-600 rounded-full animate-float opacity-65 animate-pulse" style={{
-        animationDelay: '6s'
+        <div className="absolute top-1/2 right-10 w-12 h-12 bg-gradient-to-r from-red-300 to-red-500 rounded-full animate-float opacity-40" style={{
+        animationDelay: '4s'
       }}></div>
 
         <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
@@ -171,7 +155,7 @@ const Index = () => {
           <p className="text-2xl md:text-3xl text-black/95 mb-12 max-w-3xl mx-auto animate-fade-in font-light leading-relaxed" style={{
           animationDelay: '0.5s'
         }}>
-            MrDGN Group is a <span className="font-bold text-red-600">conglomerate</span> driving innovation across entertainment, construction, and real estate industries.
+            MrDGN Group is a <span className="font-bold text-red-600">conglomerate</span> driving innovation across construction, entertainment, and real estate industries.
           </p>
           
           <div className="flex flex-col sm:flex-row gap-6 justify-center animate-fade-in" style={{
