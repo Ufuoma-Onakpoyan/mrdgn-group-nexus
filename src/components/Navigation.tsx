@@ -98,7 +98,7 @@ const Navigation = () => {
             <img 
               src="/lovable-uploads/1111f865-b4cf-408c-ab09-da8f7b8323f5.png" 
               alt="MrDGN Group Logo" 
-              className="h-8 w-auto transition-all duration-300 group-hover:scale-110"
+              className="h-12 w-auto transition-all duration-300 group-hover:scale-110"
             />
           </Link>
 
