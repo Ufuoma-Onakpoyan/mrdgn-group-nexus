@@ -384,11 +384,12 @@ const Index = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-4 gap-8">
             <div className="col-span-2">
-              <div className="flex items-center space-x-2 mb-4">
-                <div className="w-10 h-10 bg-gradient-to-r from-primary to-blue-600 rounded-lg flex items-center justify-center">
-                  <span className="text-white font-bold text-lg">M</span>
-                </div>
-                <span className="font-bold text-xl">MrDGN Group</span>
+              <div className="flex items-center space-x-3 mb-4">
+                <img 
+                  src="/lovable-uploads/1111f865-b4cf-408c-ab09-da8f7b8323f5.png" 
+                  alt="MrDGN Group Logo" 
+                  className="h-10 w-auto"
+                />
               </div>
               <p className="text-muted-foreground mb-4 max-w-md">
                 A modern holding company building the future across entertainment, construction, and real estate industries.

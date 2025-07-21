@@ -94,13 +94,12 @@ const Navigation = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
-          <Link to="/" onClick={handleNavClick} className="flex items-center space-x-2 group">
-            <div className="w-10 h-10 bg-gradient-to-r from-primary to-destructive rounded-lg flex items-center justify-center transition-all duration-300 group-hover:scale-110 group-hover:rotate-6">
-              <span className="text-primary-foreground font-bold text-lg">M</span>
-            </div>
-            <span className="font-bold text-xl transition-colors drop-shadow-lg">
-              MrDGN Group
-            </span>
+          <Link to="/" onClick={handleNavClick} className="flex items-center space-x-3 group">
+            <img 
+              src="/lovable-uploads/1111f865-b4cf-408c-ab09-da8f7b8323f5.png" 
+              alt="MrDGN Group Logo" 
+              className="h-8 w-auto transition-all duration-300 group-hover:scale-110"
+            />
           </Link>
 
           {/* Desktop Navigation */}
