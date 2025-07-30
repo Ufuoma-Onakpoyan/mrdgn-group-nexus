@@ -3,46 +3,13 @@ import React from 'react';
 import Navigation from '@/components/Navigation';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Calendar, FileText, Video, ExternalLink } from 'lucide-react';
+import { Calendar, FileText, Video, ExternalLink, Loader2 } from 'lucide-react';
+import { useBlogPosts } from '@/hooks/useBlogPosts';
+import { useNavigate } from 'react-router-dom';
 
 const Media = () => {
-  const newsItems = [
-    {
-      type: 'Press Release',
-      title: 'MrDGN Group Announces Strategic Expansion into New Markets',
-      date: '2024-01-15',
-      excerpt: 'The holding company reveals plans for significant growth across all three subsidiary companies in the coming year.',
-      image: 'https://images.unsplash.com/photo-1552664730-d307ca884978?w=400&h=250&fit=crop',
-    },
-    {
-      type: 'News Article',
-      title: 'Innovation in Construction: MrDGN Construction Leads Sustainable Building Practices',
-      date: '2024-01-10',
-      excerpt: 'Recognition for pioneering green construction technologies and sustainable development practices.',
-      image: 'https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=400&h=250&fit=crop',
-    },
-    {
-      type: 'Media Coverage',
-      title: 'MrDGN Entertainment Partners with Major Streaming Platform',
-      date: '2024-01-05',
-      excerpt: 'Strategic partnership announcement marks significant milestone in digital content distribution.',
-      image: 'https://images.unsplash.com/photo-1478720568477-b2709d01a0fc?w=400&h=250&fit=crop',
-    },
-    {
-      type: 'Industry Report',
-      title: 'Mansa Realty Reports Record Growth in Premium Property Sector',
-      date: '2023-12-20',
-      excerpt: 'Year-end analysis shows exceptional performance in luxury real estate transactions and client satisfaction.',
-      image: 'https://images.unsplash.com/photo-1582407947304-fd86f028f716?w=400&h=250&fit=crop',
-    },
-    {
-      type: 'Tech News',
-      title: 'DueRents Launches Revolutionary Real Estate Management Platform',
-      date: '2023-12-15',
-      excerpt: 'New tech subsidiary unveils cutting-edge solutions for modernizing property rentals and management processes.',
-      image: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=400&h=250&fit=crop',
-    },
-  ];
+  const navigate = useNavigate();
+  const { data: blogPosts, isLoading, error } = useBlogPosts();
 
   const resources = [
     {
@@ -93,48 +60,65 @@ const Media = () => {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8">
-            {newsItems.map((item, index) => (
-              <Card 
-                key={item.title} 
-                className="tile-glassy cursor-pointer animate-fade-in-up hover-slide"
-                style={{ animationDelay: `${index * 0.1}s` }}
-              >
-                <div className="relative overflow-hidden rounded-t-lg">
-                  <img 
-                    src={item.image} 
-                    alt={item.title}
-                    className="w-full h-48 object-cover image-hover"
-                  />
-                  <div className="absolute top-4 left-4">
-                    <span className="bg-primary text-white px-3 py-1 rounded-full text-sm font-medium">
-                      {item.type}
-                    </span>
+          {isLoading ? (
+            <div className="flex justify-center items-center py-20">
+              <Loader2 className="w-8 h-8 animate-spin text-primary" />
+              <span className="ml-2 text-muted-foreground">Loading blog posts...</span>
+            </div>
+          ) : error ? (
+            <div className="text-center py-20">
+              <p className="text-muted-foreground">Error loading blog posts. Please try again later.</p>
+            </div>
+          ) : (
+            <div className="grid md:grid-cols-2 gap-8">
+              {blogPosts?.map((post, index) => (
+                <Card 
+                  key={post.id} 
+                  className="tile-glassy cursor-pointer animate-fade-in-up hover-slide"
+                  style={{ animationDelay: `${index * 0.1}s` }}
+                  onClick={() => navigate(`/blog/${post.slug}`)}
+                >
+                  <div className="relative overflow-hidden rounded-t-lg">
+                    <img 
+                      src={post.featured_image_url || 'https://images.unsplash.com/photo-1552664730-d307ca884978?w=400&h=250&fit=crop'} 
+                      alt={post.title}
+                      className="w-full h-48 object-cover image-hover"
+                    />
+                    <div className="absolute top-4 left-4">
+                      <span className="bg-primary text-white px-3 py-1 rounded-full text-sm font-medium">
+                        Blog Post
+                      </span>
+                    </div>
                   </div>
-                </div>
-                <CardContent className="p-6">
-                  <div className="flex items-center text-muted-foreground text-sm mb-3">
-                    <Calendar className="w-4 h-4 mr-2" />
-                    {new Date(item.date).toLocaleDateString('en-US', { 
-                      year: 'numeric', 
-                      month: 'long', 
-                      day: 'numeric' 
-                    })}
-                  </div>
-                  <h3 className="text-xl font-semibold text-foreground mb-3 hover:text-primary transition-colors">
-                    {item.title}
-                  </h3>
-                  <p className="text-muted-foreground mb-4 leading-relaxed">
-                    {item.excerpt}
-                  </p>
-                  <Button variant="outline" size="sm">
-                    Read More
-                    <ExternalLink className="w-4 h-4 ml-2" />
-                  </Button>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
+                  <CardContent className="p-6">
+                    <div className="flex items-center text-muted-foreground text-sm mb-3">
+                      <Calendar className="w-4 h-4 mr-2" />
+                      {new Date(post.published_at).toLocaleDateString('en-US', { 
+                        year: 'numeric', 
+                        month: 'long', 
+                        day: 'numeric' 
+                      })}
+                    </div>
+                    <h3 className="text-xl font-semibold text-foreground mb-3 hover:text-primary transition-colors">
+                      {post.title}
+                    </h3>
+                    <p className="text-muted-foreground mb-4 leading-relaxed">
+                      {post.excerpt || post.content.substring(0, 150) + '...'}
+                    </p>
+                    <div className="flex justify-between items-center">
+                      <Button variant="outline" size="sm">
+                        Read More
+                        <ExternalLink className="w-4 h-4 ml-2" />
+                      </Button>
+                      <span className="text-xs text-muted-foreground">
+                        By {post.author}
+                      </span>
+                    </div>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          )}
 
           <div className="text-center mt-12">
             <Button size="lg" variant="outline" className="px-8 py-3">

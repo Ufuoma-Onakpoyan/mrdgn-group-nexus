@@ -3,7 +3,10 @@ import React from 'react';
 import Navigation from '@/components/Navigation';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Building2, Clapperboard, Home, ArrowRight, Star, Users, TrendingUp } from 'lucide-react';
+import { Building2, Clapperboard, Home, ArrowRight, Star, Users, TrendingUp, ExternalLink } from 'lucide-react';
+const constructionLogo = '/lovable-uploads/1111f865-b4cf-408c-ab09-da8f7b8323f5.png';
+const entertainmentLogo = '/lovable-uploads/247b0056-2438-4aa8-bbf3-b007a494534b.png';
+const realtyLogo = '/lovable-uploads/7a230ae3-e77c-495a-88d3-8a8da0abca26.png';
 
 const Businesses = () => {
   const businesses = [
@@ -11,6 +14,8 @@ const Businesses = () => {
       name: 'MrDGN Entertainment',
       description: 'Leading the future of digital entertainment through innovative content creation, immersive experiences, and cutting-edge media production.',
       icon: Clapperboard,
+      logo: entertainmentLogo,
+      website: 'https://entertainment.mrdgngroup.com/',
       color: 'from-purple-500 to-pink-500',
       image: 'https://images.unsplash.com/photo-1598300042247-d088f8ab3a91?w=600&h=400&fit=crop',
       services: ['Content Production', 'Digital Media', 'Event Management', 'Brand Partnerships'],
@@ -20,28 +25,23 @@ const Businesses = () => {
       name: 'MrDGN Construction',
       description: 'Building tomorrow\'s infrastructure with sustainable practices, innovative construction technologies, and unwavering commitment to quality.',
       icon: Building2,
+      logo: constructionLogo,
+      website: 'https://construction.mrdgngroup.com/',
       color: 'from-orange-500 to-red-500',
       image: 'https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=600&h=400&fit=crop',
       services: ['Commercial Construction', 'Residential Development', 'Infrastructure Projects', 'Green Building Solutions'],
       stats: ['100+ Projects Delivered', '₦50M+ in Contracts', '15+ Years Experience'],
     },
     {
-      name: 'Mansa Realty',
+      name: 'Mansaluxe Realty',
       description: 'Connecting people with exceptional properties through personalized service, market expertise, and innovative real estate solutions.',
       icon: Home,
+      logo: realtyLogo,
+      website: 'https://mansaluxerealty.mrdgngroup.com/',
       color: 'from-green-500 to-teal-500',
       image: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=600&h=400&fit=crop',
       services: ['Property Sales', 'Investment Advisory', 'Property Management', 'Market Analysis'],
       stats: ['500+ Properties Sold', '₦100M+ Transaction Volume', '95% Client Satisfaction'],
-    },
-    {
-      name: 'DueRents',
-      description: 'Revolutionary tech company focused on modernizing real estate rentals and property management through innovative digital solutions.',
-      icon: Users,
-      color: 'from-blue-500 to-cyan-500',
-      image: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=600&h=400&fit=crop',
-      services: ['Rental Platform Development', 'Property Management Tech', 'Automated Solutions', 'Digital Innovation'],
-      stats: ['Next-Gen Technology', 'Real Estate Focus', 'Innovative Solutions'],
     },
   ];
 
@@ -86,8 +86,12 @@ const Businesses = () => {
                 >
                   <div className={isEven ? 'lg:pr-8' : 'lg:pl-8 lg:col-start-2'}>
                     <div className="flex items-center mb-4">
-                      <div className={`w-12 h-12 rounded-full bg-gradient-to-r ${business.color} flex items-center justify-center mr-4`}>
-                        <IconComponent className="w-6 h-6 text-white" />
+                      <div className="w-16 h-16 rounded-lg bg-white shadow-lg flex items-center justify-center mr-4 p-2">
+                        <img 
+                          src={business.logo} 
+                          alt={`${business.name} logo`}
+                          className="w-full h-full object-contain"
+                        />
                       </div>
                       <h3 className="text-3xl font-bold text-foreground">
                         {business.name}
@@ -121,10 +125,19 @@ const Businesses = () => {
                       </div>
                     </div>
 
-                    <Button className="button-hover hover-scale">
-                      Learn More About {business.name}
-                      <ArrowRight className="w-4 h-4 ml-2" />
-                    </Button>
+                    <div className="flex gap-4">
+                      <Button 
+                        className="button-hover hover-scale"
+                        onClick={() => window.open(business.website, '_blank')}
+                      >
+                        Visit Website
+                        <ExternalLink className="w-4 h-4 ml-2" />
+                      </Button>
+                      <Button variant="outline" className="button-hover hover-scale">
+                        Learn More
+                        <ArrowRight className="w-4 h-4 ml-2" />
+                      </Button>
+                    </div>
                   </div>
                   
                   <div className={isEven ? '' : 'lg:col-start-1'}>
