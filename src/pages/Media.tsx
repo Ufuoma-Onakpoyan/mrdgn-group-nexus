@@ -93,7 +93,7 @@ const Media = () => {
                   <CardContent className="p-6">
                     <div className="flex items-center text-muted-foreground text-sm mb-3">
                       <Calendar className="w-4 h-4 mr-2" />
-                      {new Date(post.published_at).toLocaleDateString('en-US', { 
+                      {new Date(post.published_at || post.created_at).toLocaleDateString('en-US', { 
                         year: 'numeric', 
                         month: 'long', 
                         day: 'numeric' 
