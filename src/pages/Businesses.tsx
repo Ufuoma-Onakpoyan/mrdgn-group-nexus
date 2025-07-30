@@ -47,10 +47,10 @@ const Businesses = () => {
       name: 'DueRent',
       description: 'Revolutionizing property management with cutting-edge rental platforms, automated solutions, and streamlined tenant experiences.',
       icon: Home,
-      logo: null,
+      logo: '/lovable-uploads/duerent-logo.png',
       website: 'https://duerent.com/',
       color: 'from-blue-500 to-cyan-500',
-      image: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=600&h=400&fit=crop',
+      image: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&h=600&fit=crop',
       services: ['Property Management', 'Rental Platforms', 'Automated Solutions', 'Tenant Management'],
       stats: ['1000+ Properties Managed', '99% Uptime', '24/7 Support'],
     },
@@ -84,7 +84,7 @@ const Businesses = () => {
             </p>
           </div>
 
-          <div className="space-y-16">
+          <div className="space-y-20">
             {businesses.map((business, index) => {
               const IconComponent = business.icon;
               const isEven = index % 2 === 0;
@@ -92,56 +92,57 @@ const Businesses = () => {
               return (
                  <div 
                   key={business.name} 
-                  className={`grid lg:grid-cols-2 gap-12 items-center ${isEven ? 'animate-fade-in-left' : 'animate-fade-in-right'} ${!isEven ? 'lg:grid-flow-col-dense' : ''}`}
+                  className={`grid lg:grid-cols-2 gap-16 items-center ${isEven ? 'animate-fade-in-left' : 'animate-fade-in-right'} ${!isEven ? 'lg:grid-flow-col-dense' : ''}`}
                   style={{ animationDelay: `${index * 0.2}s` }}
                 >
-                  <div className={isEven ? 'lg:pr-8' : 'lg:pl-8 lg:col-start-2'}>
-                    <div className="flex items-center mb-4">
-                      {business.logo ? (
-                        <div className="w-48 h-16 flex items-center justify-start">
-                          <img 
-                            src={business.logo} 
-                            alt={`${business.name} logo`}
-                            className="max-w-full max-h-full object-contain"
-                          />
-                        </div>
-                      ) : (
-                        <h3 className="text-3xl font-bold text-foreground">
-                          {business.name}
-                        </h3>
-                      )}
+                  <div className={`${isEven ? 'lg:pr-12' : 'lg:pl-12 lg:col-start-2'} space-y-6`}>
+                    <div className="flex items-center mb-6">
+                      <div className="w-56 h-20 flex items-center justify-start">
+                        <img 
+                          src={business.logo} 
+                          alt={`${business.name} logo`}
+                          className="max-w-full max-h-full object-contain hover-scale transition-transform duration-300"
+                        />
+                      </div>
                     </div>
-                    <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
+                    
+                    <p className="text-lg text-muted-foreground leading-relaxed">
                       {business.description}
                     </p>
                     
-                    <div className="mb-6">
-                      <h4 className="text-lg font-semibold text-foreground mb-3">Key Services</h4>
-                      <div className="grid grid-cols-2 gap-2">
+                    <div className="bg-gray-50 rounded-xl p-6">
+                      <h4 className="text-lg font-semibold text-foreground mb-4 flex items-center">
+                        <Star className="w-5 h-5 text-primary mr-2" />
+                        Key Services
+                      </h4>
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                         {business.services.map((service) => (
                           <div key={service} className="flex items-center text-muted-foreground">
-                            <Star className="w-4 h-4 text-primary mr-2" />
-                            {service}
+                            <div className="w-2 h-2 bg-primary rounded-full mr-3 flex-shrink-0"></div>
+                            <span className="text-sm">{service}</span>
                           </div>
                         ))}
                       </div>
                     </div>
 
-                    <div className="mb-8">
-                      <h4 className="text-lg font-semibold text-foreground mb-3">Key Achievements</h4>
-                      <div className="space-y-2">
+                    <div className="bg-gradient-to-r from-primary/5 to-primary/10 rounded-xl p-6">
+                      <h4 className="text-lg font-semibold text-foreground mb-4 flex items-center">
+                        <TrendingUp className="w-5 h-5 text-green-500 mr-2" />
+                        Key Achievements
+                      </h4>
+                      <div className="space-y-3">
                         {business.stats.map((stat) => (
                           <div key={stat} className="flex items-center text-muted-foreground">
-                            <TrendingUp className="w-4 h-4 text-green-500 mr-2" />
-                            {stat}
+                            <div className="w-2 h-2 bg-green-500 rounded-full mr-3 flex-shrink-0"></div>
+                            <span className="text-sm font-medium">{stat}</span>
                           </div>
                         ))}
                       </div>
                     </div>
 
-                    <div className="flex gap-4">
+                    <div className="pt-4">
                       <Button 
-                        className="button-hover hover-scale"
+                        className="button-hover hover-scale bg-gradient-to-r from-primary to-primary/80 hover:from-primary/90 hover:to-primary text-white shadow-lg"
                         onClick={() => window.open(business.website, '_blank')}
                       >
                         Visit Website
@@ -151,14 +152,23 @@ const Businesses = () => {
                   </div>
                   
                   <div className={isEven ? '' : 'lg:col-start-1'}>
-                    <Card className="overflow-hidden tile-glassy hover-slide">
-                      <div className="relative">
+                    <Card className="overflow-hidden shadow-2xl hover:shadow-3xl transition-all duration-500 transform hover:-translate-y-2">
+                      <div className="relative group">
                         <img 
                           src={business.image} 
                           alt={business.name}
-                          className="w-full h-64 lg:h-80 object-cover image-hover"
+                          className="w-full h-80 lg:h-96 object-cover transition-transform duration-700 group-hover:scale-110"
                         />
-                        <div className={`absolute inset-0 bg-gradient-to-r ${business.color} opacity-20 transition-opacity duration-300 hover:opacity-30`}></div>
+                        <div className={`absolute inset-0 bg-gradient-to-br ${business.color} opacity-20 transition-opacity duration-300 group-hover:opacity-30`}></div>
+                        <div className="absolute inset-0 bg-black/10 transition-opacity duration-300 group-hover:bg-black/20"></div>
+                        
+                        {/* Floating business name overlay */}
+                        <div className="absolute bottom-6 left-6 right-6">
+                          <div className="bg-white/95 backdrop-blur-sm rounded-lg p-4 transform translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
+                            <h3 className="text-lg font-bold text-gray-900">{business.name}</h3>
+                            <p className="text-sm text-gray-600 mt-1">Industry Leader</p>
+                          </div>
+                        </div>
                       </div>
                     </Card>
                   </div>
