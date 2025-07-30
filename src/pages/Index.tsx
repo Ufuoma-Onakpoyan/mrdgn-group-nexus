@@ -311,9 +311,21 @@ const Index = () => {
            <div className="grid md:grid-cols-2 gap-8">
             {portfolioItems.map((item, index) => {
             const currentImageIndex = portfolioImages[item.title] || 0;
-            return <Card key={item.title} className="tile-glassy cursor-pointer group animate-scale-in overflow-hidden" style={{
-              animationDelay: `${index * 0.2}s`
-            }}>
+            const getBusinessLink = (title: string) => {
+              if (title.includes('Entertainment') || title.includes('Content Creation')) return 'https://entertainment.mrdgngroup.com/';
+              if (title.includes('Construction') || title.includes('Infrastructure')) return 'https://construction.mrdgngroup.com/';
+              if (title.includes('Real Estate') || title.includes('Realty')) return 'https://mansaluxerealty.mrdgngroup.com/';
+              return null;
+            };
+            
+            const businessLink = getBusinessLink(item.title);
+            
+            return <Card 
+              key={item.title} 
+              className="tile-glassy cursor-pointer group animate-scale-in overflow-hidden" 
+              style={{ animationDelay: `${index * 0.2}s` }}
+              onClick={() => businessLink && window.open(businessLink, '_blank')}
+            >
                   <div className="relative">
                     <img src={item.images[currentImageIndex]} alt={item.title} className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500" />
                     <div className="absolute top-4 left-4">

@@ -14,7 +14,7 @@ const Businesses = () => {
       name: 'MrDGN Entertainment',
       description: 'Leading the future of digital entertainment through innovative content creation, immersive experiences, and cutting-edge media production.',
       icon: Clapperboard,
-      logo: entertainmentLogo,
+      logo: '/lovable-uploads/5a1e9e6d-359c-4888-95d7-1840fc4884ef.png',
       website: 'https://entertainment.mrdgngroup.com/',
       color: 'from-purple-500 to-pink-500',
       image: 'https://images.unsplash.com/photo-1598300042247-d088f8ab3a91?w=600&h=400&fit=crop',
@@ -25,7 +25,7 @@ const Businesses = () => {
       name: 'MrDGN Construction',
       description: 'Building tomorrow\'s infrastructure with sustainable practices, innovative construction technologies, and unwavering commitment to quality.',
       icon: Building2,
-      logo: constructionLogo,
+      logo: '/lovable-uploads/86d4e27b-f590-4639-9308-ccc5bdfeae48.png',
       website: 'https://construction.mrdgngroup.com/',
       color: 'from-orange-500 to-red-500',
       image: 'https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=600&h=400&fit=crop',
@@ -36,12 +36,23 @@ const Businesses = () => {
       name: 'Mansaluxe Realty',
       description: 'Connecting people with exceptional properties through personalized service, market expertise, and innovative real estate solutions.',
       icon: Home,
-      logo: realtyLogo,
+      logo: '/lovable-uploads/c0a9609c-c44e-4d32-9510-8ff760c58f7d.png',
       website: 'https://mansaluxerealty.mrdgngroup.com/',
       color: 'from-green-500 to-teal-500',
       image: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=600&h=400&fit=crop',
       services: ['Property Sales', 'Investment Advisory', 'Property Management', 'Market Analysis'],
       stats: ['500+ Properties Sold', '₦100M+ Transaction Volume', '95% Client Satisfaction'],
+    },
+    {
+      name: 'DueRent',
+      description: 'Revolutionizing property management with cutting-edge rental platforms, automated solutions, and streamlined tenant experiences.',
+      icon: Home,
+      logo: null,
+      website: 'https://duerent.com/',
+      color: 'from-blue-500 to-cyan-500',
+      image: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=600&h=400&fit=crop',
+      services: ['Property Management', 'Rental Platforms', 'Automated Solutions', 'Tenant Management'],
+      stats: ['1000+ Properties Managed', '99% Uptime', '24/7 Support'],
     },
   ];
 
@@ -62,7 +73,7 @@ const Businesses = () => {
       </section>
 
       {/* Businesses Overview */}
-      <section className="py-20 bg-muted/20">
+      <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
@@ -86,16 +97,19 @@ const Businesses = () => {
                 >
                   <div className={isEven ? 'lg:pr-8' : 'lg:pl-8 lg:col-start-2'}>
                     <div className="flex items-center mb-4">
-                      <div className="w-16 h-16 rounded-lg bg-white shadow-lg flex items-center justify-center mr-4 p-2">
-                        <img 
-                          src={business.logo} 
-                          alt={`${business.name} logo`}
-                          className="w-full h-full object-contain"
-                        />
-                      </div>
-                      <h3 className="text-3xl font-bold text-foreground">
-                        {business.name}
-                      </h3>
+                      {business.logo ? (
+                        <div className="w-48 h-16 flex items-center justify-start">
+                          <img 
+                            src={business.logo} 
+                            alt={`${business.name} logo`}
+                            className="max-w-full max-h-full object-contain"
+                          />
+                        </div>
+                      ) : (
+                        <h3 className="text-3xl font-bold text-foreground">
+                          {business.name}
+                        </h3>
+                      )}
                     </div>
                     <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
                       {business.description}
@@ -132,10 +146,6 @@ const Businesses = () => {
                       >
                         Visit Website
                         <ExternalLink className="w-4 h-4 ml-2" />
-                      </Button>
-                      <Button variant="outline" className="button-hover hover-scale">
-                        Learn More
-                        <ArrowRight className="w-4 h-4 ml-2" />
                       </Button>
                     </div>
                   </div>
