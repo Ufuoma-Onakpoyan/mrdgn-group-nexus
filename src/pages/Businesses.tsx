@@ -97,7 +97,7 @@ const Businesses = () => {
                 >
                   <div className={`${isEven ? 'lg:pr-12' : 'lg:pl-12 lg:col-start-2'} space-y-6`}>
                     <div className="flex items-center mb-6">
-                      <div className="w-56 h-20 flex items-center justify-start">
+                      <div className="w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg h-16 sm:h-20 md:h-24 flex items-center justify-start">
                         <img 
                           src={business.logo} 
                           alt={`${business.name} logo`}
