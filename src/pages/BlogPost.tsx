@@ -54,7 +54,10 @@ const BlogPost = () => {
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <Button 
             variant="ghost" 
-            onClick={() => navigate('/media')}
+            onClick={() => {
+              navigate('/media');
+              window.scrollTo(0, 0);
+            }}
             className="mb-6 hover:bg-muted"
           >
             <ArrowLeft className="w-4 h-4 mr-2" />
@@ -153,7 +156,10 @@ const BlogPost = () => {
           {/* Navigation */}
           <div className="mt-12 text-center">
             <Button 
-              onClick={() => navigate('/media')}
+              onClick={() => {
+                navigate('/media');
+                window.scrollTo(0, 0);
+              }}
               size="lg"
               className="px-8"
             >
