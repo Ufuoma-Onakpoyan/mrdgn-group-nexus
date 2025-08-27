@@ -3,6 +3,7 @@ import { useParams, useNavigate } from 'react-router-dom';
 import Navigation from '@/components/Navigation';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
+import Footer from '@/components/Footer';
 import { useBlogPost } from '@/hooks/useBlogPosts';
 import { Calendar, User, Eye, ArrowLeft, Loader2, Tag } from 'lucide-react';
 
@@ -169,6 +170,8 @@ const BlogPost = () => {
           </div>
         </div>
       </section>
+
+      <Footer />
     </div>
   );
 };

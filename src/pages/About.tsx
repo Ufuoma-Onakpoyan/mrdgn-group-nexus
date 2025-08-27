@@ -2,7 +2,9 @@
 import React from 'react';
 import Navigation from '@/components/Navigation';
 import { Card, CardContent } from '@/components/ui/card';
+import Footer from '@/components/Footer';
 import { Target, Eye, Users, Award } from 'lucide-react';
+import ceoPortrait from '@/assets/mrdgn-ceo-portrait.jpg';
 
 const About = () => {
   const values = [
@@ -65,8 +67,8 @@ const About = () => {
             <div className="animate-fade-in-right" style={{ animationDelay: '0.3s' }}>
               <div className="relative card-hover">
                 <img 
-                  src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=600&h=400&fit=crop"
-                  alt="Modern office building"
+                  src={ceoPortrait}
+                  alt="Mr. DGN - CEO and Founder of MrDGN Group"
                   className="rounded-lg shadow-2xl image-hover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-transparent rounded-lg transition-opacity duration-300 hover:opacity-80"></div>
@@ -153,6 +155,8 @@ const About = () => {
           </div>
         </div>
       </section>
+
+      <Footer />
     </div>
   );
 };

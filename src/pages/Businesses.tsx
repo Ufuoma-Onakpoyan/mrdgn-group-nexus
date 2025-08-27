@@ -3,6 +3,7 @@ import React from 'react';
 import Navigation from '@/components/Navigation';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
+import Footer from '@/components/Footer';
 import { Building2, Clapperboard, Home, ArrowRight, Star, Users, TrendingUp, ExternalLink } from 'lucide-react';
 const constructionLogo = '/lovable-uploads/1111f865-b4cf-408c-ab09-da8f7b8323f5.png';
 const entertainmentLogo = '/lovable-uploads/247b0056-2438-4aa8-bbf3-b007a494534b.png';
@@ -230,6 +231,8 @@ const Businesses = () => {
           </div>
         </div>
       </section>
+
+      <Footer />
     </div>
   );
 };

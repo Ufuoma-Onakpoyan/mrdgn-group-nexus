@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Navigation from '@/components/Navigation';
 import TypingEffect from '@/components/TypingEffect';
+import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious, type CarouselApi } from '@/components/ui/carousel';
@@ -25,21 +26,25 @@ const Index = () => {
   const businesses = [{
     name: 'MrDGN Entertainment',
     description: 'Creating captivating content and experiences across digital and traditional media platforms.',
+    logo: '/lovable-uploads/5a1e9e6d-359c-4888-95d7-1840fc4884ef.png',
     icon: Clapperboard,
     color: 'from-purple-500 to-pink-500'
   }, {
     name: 'MrDGN Construction',
     description: 'Building tomorrow\'s infrastructure with innovative construction solutions and sustainable practices.',
+    logo: '/lovable-uploads/86d4e27b-f590-4639-9308-ccc5bdfeae48.png',
     icon: Building2,
     color: 'from-orange-500 to-red-500'
   }, {
-    name: 'Mansa Realty',
+    name: 'Mansa Luxury Realty',
     description: 'Premium real estate services connecting people with their perfect properties and investment opportunities.',
+    logo: '/lovable-uploads/c0a9609c-c44e-4d32-9510-8ff760c58f7d.png',
     icon: Home,
     color: 'from-green-500 to-teal-500'
   }, {
-    name: 'DueRents',
+    name: 'DueRent',
     description: 'Revolutionary tech company focused on modernizing real estate rentals and property management solutions.',
+    logo: '/lovable-uploads/duerent-logo.png',
     icon: () => <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-purple-600 rounded-2xl flex items-center justify-center relative">
           <div className="w-6 h-6 bg-white rounded-lg flex items-center justify-center">
             <div className="w-3 h-3 bg-gradient-to-br from-blue-500 to-purple-600 rounded"></div>
@@ -248,14 +253,12 @@ const Index = () => {
                           <div className="absolute inset-0 bg-gradient-to-t from-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                           <div className="absolute -inset-4 bg-gradient-to-r from-primary/20 to-destructive/20 rounded-3xl opacity-0 group-hover:opacity-100 blur-xl transition-all duration-700"></div>
                           <div className="relative z-10">
-                            <div className="w-16 h-16 mx-auto mb-6 rounded-2xl flex items-center justify-center group-hover:scale-125 group-hover:rotate-12 transition-all duration-700 shadow-lg relative overflow-hidden">
-                              {business.name === 'MrDGN Entertainment' ? <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-pink-500 rounded-2xl flex items-center justify-center">
-                                  <IconComponent className="w-8 h-8 text-white" />
-                                </div> : business.name === 'MrDGN Construction' ? <div className="w-16 h-16 bg-gradient-to-br from-orange-500 to-red-500 rounded-2xl flex items-center justify-center">
-                                  <IconComponent className="w-8 h-8 text-white" />
-                                </div> : business.name === 'Mansa Realty' ? <div className="w-16 h-16 bg-gradient-to-br from-green-500 to-teal-500 rounded-2xl flex items-center justify-center">
-                                  <IconComponent className="w-8 h-8 text-white" />
-                                </div> : <IconComponent />}
+                            <div className="w-16 h-16 mx-auto mb-6 rounded-2xl flex items-center justify-center group-hover:scale-125 group-hover:rotate-12 transition-all duration-700 shadow-lg relative overflow-hidden bg-white/10 backdrop-blur-sm">
+                              <img 
+                                src={business.logo} 
+                                alt={`${business.name} Logo`}
+                                className="w-12 h-12 object-contain"
+                              />
                             </div>
                             <h3 className="text-xl font-bold text-white mb-4 group-hover:text-primary transition-colors duration-300 group-hover:drop-shadow-lg">
                               {business.name}
@@ -391,45 +394,7 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="bg-muted text-foreground py-12">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-4 gap-8">
-            <div className="col-span-2">
-              <div className="flex items-center space-x-3 mb-4">
-                <img 
-                  src="/lovable-uploads/1111f865-b4cf-408c-ab09-da8f7b8323f5.png" 
-                  alt="MrDGN Group Logo" 
-                  className="h-10 w-auto"
-                />
-              </div>
-              <p className="text-muted-foreground mb-4 max-w-md">
-                A modern holding company building the future across entertainment, construction, and real estate industries.
-              </p>
-            </div>
-            <div>
-              <h4 className="font-semibold mb-4">Our Businesses</h4>
-              <ul className="space-y-2 text-muted-foreground">
-                <li>MrDGN Entertainment</li>
-                <li>MrDGN Construction</li>
-                <li>Mansa Realty</li>
-                <li>DueRents</li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="font-semibold mb-4">Quick Links</h4>
-              <ul className="space-y-2 text-muted-foreground">
-                <li><Link to="/about" className="hover:text-foreground transition-colors" onClick={() => window.scrollTo(0, 0)}>About Us</Link></li>
-                <li><Link to="/careers" className="hover:text-foreground transition-colors" onClick={() => window.scrollTo(0, 0)}>Careers</Link></li>
-                <li><Link to="/contact" className="hover:text-foreground transition-colors" onClick={() => window.scrollTo(0, 0)}>Contact</Link></li>
-              </ul>
-            </div>
-          </div>
-          <div className="border-t border-border pt-8 mt-8 text-center text-muted-foreground">
-            <p>&copy; 2024 MrDGN Group. All rights reserved.</p>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </div>;
 };
 export default Index;

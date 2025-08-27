@@ -3,6 +3,7 @@ import React from 'react';
 import Navigation from '@/components/Navigation';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
+import Footer from '@/components/Footer';
 import { MapPin, Clock, DollarSign, Users, TrendingUp, Award } from 'lucide-react';
 
 const Careers = () => {
@@ -218,6 +219,8 @@ const Careers = () => {
           </div>
         </div>
       </section>
+
+      <Footer />
     </div>
   );
 };

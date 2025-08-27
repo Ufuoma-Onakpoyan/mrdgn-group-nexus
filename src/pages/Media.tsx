@@ -3,6 +3,7 @@ import React from 'react';
 import Navigation from '@/components/Navigation';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
+import Footer from '@/components/Footer';
 import { Calendar, FileText, Video, ExternalLink, Loader2 } from 'lucide-react';
 import { useBlogPosts } from '@/hooks/useBlogPosts';
 import { useNavigate } from 'react-router-dom';
@@ -216,6 +217,8 @@ const Media = () => {
           </Card>
         </div>
       </section>
+
+      <Footer />
     </div>
   );
 };
